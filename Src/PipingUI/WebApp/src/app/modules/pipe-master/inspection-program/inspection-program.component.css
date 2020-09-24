@@ -1,0 +1,198 @@
+
+.risk-analysis {
+    padding: 10px;
+    height: calc(100vh - 100px);
+}
+
+.risk-matrix{
+    height: calc(60vh);
+}
+
+.risk-grid{
+    height: calc(50vh - 30px);
+}
+.card-data {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding:0px !important;
+    background:  #E5E5E5;
+}
+.breadcrumb{
+    height:30px; 
+    line-height: 25px;
+    background:  #FFFFFF;
+    padding: 2px; 
+}
+.title{   
+    color:#003D7E !important;      
+    font-size:12px;  
+    vertical-align: top;
+    padding-left:10px;
+    padding-right:10px;
+    float:left;
+    font-family: sans-serif;
+}
+table {
+    width: 100%;
+}
+
+  .matrix-header{
+    padding-left:5px;
+    padding-top:6px;
+    padding-bottom:7px;
+     
+      font-size:13px !important;    
+      color:#000000 !important;
+      font-weight: bold;
+  }
+
+  .matrix-content{
+    background-color:#FFFFFF !important;
+}
+
+/* Matrix */
+.matrix-tile {       
+    justify-content:center !important; 
+    font-size:10px !important;
+    height:38px !important;
+    width:38px !important; 
+    border:2px solid #FFFFFF;
+    text-align:cnter;
+ }
+ 
+ .matrix-bottom-title
+ {
+      padding-left:5px;
+      padding-top:5px;
+      padding-bottom:5px;
+      font-size:13px !important;    
+      color:#000000 !important;
+      display: block !important;
+      font-weight: bold;
+      text-align:center;
+ }
+ 
+ .box {
+    display: table;
+    width: 38px;
+    height: 38px;
+    border-spacing: 6px;     
+    border-radius:5px;
+    cursor:pointer;
+    box-shadow: 2px 2px 2px grey, 0 0 2px black;
+  } 
+  
+  .circle {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;    
+    font-size: 10px;  
+    color: #000000;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0px solid #000;
+    cursor:pointer;
+  }
+
+  .matrix-card {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding:0px !important;
+}
+
+.content1 {
+    font-size: 14px;
+    height: -webkit-fill-available;
+}
+
+ /* Table */
+  
+ th{ 
+    background-color: #DAEBFF !important;  
+    color: #003D7E !important; 
+    font-size: 12px !important; 
+    height: 28px !important; 
+    font-weight: bold !important; 
+}
+tr.mat-header-row {  
+    height: 25px !important;  
+    font-weight: bold;    
+}
+tr.mat-row {  
+    height: 25px !important;
+    font-size: 12px !important; 
+}
+td.mat-cell
+{
+    font-size: 12px !important; 
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 5px !important;
+}
+
+.mat-paginator-outer-container {
+  display: flex !important;
+  height:28px !important;
+}
+
+.mat-paginator  {
+  width: 100%;
+}
+
+.mat-paginator .mat-paginator-container{
+  display: flex !important;
+ justify-content: flex-start !important;
+  min-height: 35px !important;
+  height: 30px !important;
+  padding: 0px !important;  
+  margin: 0px  !important; 
+} 
+
+.mat-paginator-range-actions,
+.mat-paginator-range-label {
+  flex-grow: 1 !important;
+  margin-left: 0 !important;
+  justify-content: flex-end !important;
+  margin: 0  !important;  
+}
+
+.mat-form-field-underline {
+    display: none !important;
+  }
+
+  .frm-label
+  {
+    padding:10px  !important;
+    color:#000000  !important;
+    font-size:13px !important;
+  }
+
+  ::ng-deep .edit-data-fields .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.3em 0 1.0em 0 !important;
+}
+
+.edit-data-fields .mat-form-field-flex {
+    height: 30px !important;
+    color:#003D7E;
+    font-size:14px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.edit-data-fields .mat-form-field-wrapper {
+    padding-bottom: 5px !important;
+}
+
+.edit-data-fields .mat-form-field-infix {
+    padding: 0 !important;
+}
+
+.grid-header-icon{
+    color:#003D7E;
+    padding-top:2px;
+    height:20px;
+    width:20px;
+    font-size:20px;
+}

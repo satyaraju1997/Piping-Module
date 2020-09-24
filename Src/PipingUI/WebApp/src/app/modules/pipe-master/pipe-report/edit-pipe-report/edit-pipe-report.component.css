@@ -1,0 +1,367 @@
+.pipe-report-header {
+    background-color: #FFFFFF !important;
+    padding: 3px 16px;
+    font-size: 12px;
+    color: #003D7E;
+    font-weight: bold;
+    font-family: 'Open Sans';
+}
+
+.report-content {
+    margin: 20px;
+}
+
+.pipe-report-header .pipe-report-title, .pipe-report-title {
+    margin-bottom: 0 !important;
+}
+
+.add-pipe-report .mat-card-header-text {
+    margin: 0;
+}
+
+.pipe-report-title {
+    font-size: 13px !important;
+    color: #003D7E !important;
+    font-family: 'Open Sans' !important;
+
+}
+
+.master-data-header {
+    color: #003D7E !important;
+    padding: 0px;
+    background-color: #EEF6FF;
+    font-weight: bold;
+    font-size: 14px !important;
+}
+.add-report-data {
+    margin-bottom: 5px !important;
+}
+
+.master-data {
+    border-color: #E5E5E5;
+    padding: 5px !important;
+    height: calc(100vh - 133px);
+    overflow-y: scroll;
+    font-family: 'Open Sans' !important;
+}
+
+.description-panels {
+    border-color: #E5E5E5;
+    background-color: #E5E5E5;
+    padding: 0px !important;
+    margin: 0px !important;
+    height: calc(100vh - 130px);
+    overflow-y: scroll;
+}
+
+.mat-expansion-panel-content {
+    font-family: 'Open Sans' !important;
+}
+
+.master-data-fields {
+    margin:10px;
+    background-color: #E5E5E5 !important;
+}
+
+.master-fields {
+    margin:10px;
+    background-color: #E5E5E5 !important;
+}
+
+.description-panels .master-data-fields {
+    margin: 0 !important;
+}
+
+.input-fields, .data-fields {
+    background: #E5E5E5;
+    padding: 0px;
+    margin-bottom: 8px;
+    background-color: #FFFFFF !important;
+}
+
+.user-input-field {
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: #FFFFFF !important;
+    color:#003D7E;
+    font-size: 12px !important;
+    font-family: 'Open Sans' !important;
+    padding-bottom: 4px !important;
+}
+
+.inspec-prgrm {
+    background-color: #CACFD2  !important;
+    margin-bottom: 5px;
+    padding: 10px !important;
+}
+
+.auto-pick-field {
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: #FFFFFF !important;
+    color:#003D7E !important;
+    font-size: 12px !important;
+    font-family: 'Open Sans' !important;
+    padding-bottom:4px !important;
+}
+
+
+.attach-files {
+    background: #FFFFFF !important;
+    padding-top: 10px;
+}
+
+.pdf-img, .excel-img {
+    width: 20px;     
+}
+
+
+
+.files, .inspection-confidence {
+    margin-bottom: 10px;
+}
+
+.inspec-table th.mat-header-cell:first-of-type, .inspec-table td.mat-cell:first-of-type,
+.inspec-table td.mat-footer-cell:first-of-type, .insp-conf-table th.mat-header-cell:first-of-type,
+.insp-conf-table td.mat-cell:first-of-type, .insp-conf-table td.mat-footer-cell:first-of-type,
+.tml-table th.mat-header-cell:first-of-type, .tml-table td.mat-cell:first-of-type,
+.tml-table td.mat-footer-cell:first-of-type, .observation-table th.mat-header-cell:first-of-type,
+.observation-table td.mat-cell:first-of-type, .observation-table td.mat-footer-cell:first-of-type,
+.recom-table th.mat-header-cell:first-of-type, .recom-table td.mat-cell:first-of-type,
+.recom-table td.mat-footer-cell:first-of-type {
+    padding-left: 5px !important;
+}
+
+.inspec-table th,  .tml-table th, .recom-table th, .insp-conf-table th {
+    background-color: #FFFFFF !important;
+    color: #003D7E !important;
+    font-size: 12px !important;
+
+    padding:0px !important;
+    height: 30px  !important;
+
+}
+
+.tml-table td{
+    height: 35px  !important;
+}
+
+.observation-table th {
+    background-color: #FFFFFF !important;
+    color: #003D7E !important;
+    font-size: 12px !important;
+
+    padding-bottom:5px !important;
+}
+
+.insp-conf-table th.mat-header-cell, td.mat-cell, td.mat-footer-cell   {
+    padding-bottom: 0px !important;
+    border-bottom: 1px ridge #E5E5E5 !important;
+
+}
+
+.inspec-table td, .cml-table td, .tml-table td, .insp-conf-table td,  .recom-table td, .title-detail, .observation-table td {
+    font-size: 12px !important;
+    font-family: 'Open Sans';
+}
+
+.inspec-table th.mat-header-cell:last-of-type, .inspec-table td.mat-cell:last-of-type,
+.inspec-table td.mat-footer-cell:last-of-type, .insp-conf-table th.mat-header-cell:last-of-type,
+.insp-conf-table td.mat-cell:last-of-type, .insp-conf-table td.mat-footer-cell:last-of-type,
+.tml-table th.mat-header-cell:last-of-type, .tml-table td.mat-cell:last-of-type,
+.tml-table td.mat-footer-cell:last-of-type, .observation-table th.mat-header-cell:last-of-type,
+.observation-table td.mat-cell:last-of-type, .observation-table td.mat-footer-cell:last-of-type,
+.recom-table th.mat-header-cell:last-of-type, .recom-table td.mat-cell:last-of-type,
+.recom-table td.mat-footer-cell:last-of-type {
+    padding-right: 0 !important;
+}
+
+.pipe-card-field {
+    padding: 0 5px !important;
+    height:28px !important;
+    background-color: #F2F3F4  !important;
+}
+
+.pipe-card-field:focus-within
+{
+    background-color:#DAEBFF !important;
+}
+
+.checkbox-field:focus-within
+{
+    background-color:#DAEBFF !important;
+}
+
+input:focus
+{
+   font-weight:bold !important;
+}
+
+.text-area-field {
+    height: 100%;
+    overflow-y: auto;
+    min-height:40px !important;
+    word-wrap: break-word;
+    padding:0px !important;
+    padding-left:5px !important;
+    background-color: #FFFFFF!important;
+    border: 0px solid   #E5E5E5;
+    vertical-align: middle !important;
+    overflow-y: hidden !important;
+}
+
+.add-obs {
+    width: 5%;
+    text-align:right;
+}
+
+.pipe-readonly-field {
+    height: 28px;
+    word-wrap: break-word;
+    padding-left:5px !important;
+    background-color: #CACFD2;
+  }
+
+  .pipe-readonly-field .mat-form-field-wrapper{
+  margin-top: -13px !important;
+  }
+
+.observation-field .mat-form-field, .observ-card, .obs-list {
+    width: 100%;
+}
+
+.observation-field .mat-form-field-underline, .approval-field .mat-form-field-underline {
+    display: none !important;
+  }
+
+
+.observation-field .mat-form-field-flex, .approval-field .mat-form-field-flex {
+    height: 30px !important;
+    color:#003D7E;
+}
+
+.observation-field .mat-form-field-wrapper, .approval-field .mat-form-field-wrapper, .master-data-fields .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.observation-field .mat-form-field-infix, .approval-field .mat-form-field-infix, .master-data-fields .mat-form-field-infix{
+    padding: 0 !important;
+}
+
+.master-data-fields .mat-form-field-underline {
+    display: none !important;
+  }
+
+.master-data-fields .mat-form-field-flex {
+    height: 28px !important;
+    margin-top:-2px;
+}
+
+ table {
+     width:100%;
+ }
+
+ .file-chip {
+    background: #E5E5E5 !important;
+    justify-content: space-between  !important;
+    width: 260px !important;
+ }
+
+ .input-fileupload-hidden{
+    display:none;
+  }
+
+  .mandatory {
+    color: red;
+    margin-left: 3px;
+  }
+
+.pipe-card-field .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    width: 2em !important;
+    padding: -10px !important;
+    margin: -30px !important;
+}
+
+.description-panels .mat-expansion-panel-header
+{
+    height: 40px !important;
+    background: #FFFFFF !important;
+    font-size:12px !important;
+    color:#003D7E !important;
+    padding-left:10px !important;
+    vertical-align: middle !important;
+}
+
+.description-panels .mat-expansion-panel-header-title, .mat-expansion-panel-header-description
+{
+    color:#003D7E !important;
+}
+
+.description-panels .mat-expansion-panel-body {
+    padding: 10px !important;
+    padding-top:0px !important;
+    background: #FFFFFF !important;
+}
+
+.insp-conf-table .mat-row {
+    font-size: 12px !important;
+    height: 40px !important;
+}
+
+.tml-table .mat-row {
+    font-size: 12px !important;
+    height: 30px !important;
+}
+.recom-table .mat-header-row {
+    height:30px !important;
+    font-size: 12px !important;
+}
+.recom-table .mat-row {
+    font-size: 12px !important;
+    height: 30px !important;
+}
+
+.checkbox-field {
+    height: 20px;
+    width: 20px;
+    margin-top:5px !important;
+    word-wrap: break-word;
+    padding:0px !important;
+    background-color: #F2F3F4 !important;
+
+
+}
+  .checkbox-field .mat-checkbox-inner-container {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.checkbox-field .mat-checkbox .mat-checkbox-frame {
+    background-color: #F2F3F4 !important;
+    border: 1px solid   #E5E5E5;
+}
+
+.button30 {
+    width: 30px;
+    height: 30px;
+  }
+  .icon30 {
+    font-size: 20px;
+    margin-top: -10px;
+    padding-top:2px;
+  }
+
+  .mat-standard-chip.mat-chip-with-trailing-icon {
+    margin:3px 5px !important;
+    padding: 7px !important;
+}
+
+.mat-standard-chip {
+    border-radius:5px !important;
+    min-height:30px !important;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove {
+    color: red;
+    opacity: 0.9;
+}

@@ -1,0 +1,133 @@
+.basic-data {
+    padding: 20px;
+    height: calc(100vh - 121px);
+    background: #E5E5E5;
+}
+
+.card-headers{
+    height: 100%;
+}
+
+/* .bar-chart {
+    width: 465px !important;
+    height: 245px !important;
+    margin: 15px 0px 0px 17px !important;
+} */
+
+.card-content {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding:0px !important;
+}
+
+.card-data {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding:0px !important;
+}
+
+.content {
+    font-size: 12px;
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+}
+
+.content1 {
+    font-size: 12px;
+    height: -webkit-fill-available;
+}
+
+/* table {
+    width: 100%;
+} */
+
+/* .basic-table th{ 
+    background-color: #DAEBFF !important;  
+    color: #003D7E !important; 
+    font-size: 12px !important; 
+    height: 28px !important; 
+    font-weight: bold !important; 
+}
+.basic-table tr.mat-header-row {  
+    height: 42px !important;
+    font-weight: bold;
+}
+.basic-table tr.mat-row {  
+    height: 45px !important;
+    font-size: 12px !important; 
+}
+.basic-table td.mat-cell {
+    font-size: 12px !important; 
+}
+
+.basic-table th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 16px;
+} */
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #E5E5E5; 
+    border-radius: 6px;
+  }
+
+  /* .mat-card-title, .mat-card-content {
+      display: block !important;
+      margin: 0px !important; 
+      font-size:12px !important;
+} */
+
+  .section-header{
+    padding: 9px 16px;
+    background-color: #DAEBFF !important;     
+    font-size:12px !important;    
+    color: #003D7E !important;
+    font-weight: bold;
+  }
+  
+  .sectioncontent{
+      background-color:#FFFFFF !important;
+  }
+  
+  .griddata {
+    background-color:#ffffff !important;    
+    justify-content:left !important;
+    font-size:12px !important;
+}
+
+.grid-Data {
+    font-size:12px !important;
+    border-bottom: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+}
+
+.grid-data {
+    background-color:#ffffff !important;    
+    justify-content:left !important; 
+    font-size:12px !important;
+    border-bottom: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+    border-left: 1px solid #DBDBDB;
+}
+
+.inspection-matrix-tile {       
+    justify-content:center !important; 
+    font-size:12px !important;
+    border:2px solid #FFFFFF;
+    text-align:center;
+}
+
+.inspection-matrix-bottom-title {
+      padding-left:30px;
+      padding-top:5px;
+      padding-bottom: 2px;
+      font-size:12px !important;    
+      color:#000000 !important;
+      display: block !important;
+      font-weight: bold;
+      text-align:center;
+}

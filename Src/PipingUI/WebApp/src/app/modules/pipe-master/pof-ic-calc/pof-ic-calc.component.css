@@ -1,0 +1,72 @@
+.pof-ic-fields {
+    height: calc(100vh - 90px);
+    overflow-y: scroll;
+}
+
+.pof-ic-header {
+    font-size: 12px;
+    font-family: sans-serif;
+    padding: 8px 16px 8px 16px;
+    color: #003D7E;
+    font-weight: 600;
+}
+
+.search-btn {
+    background-color: rgb(0, 61, 126);
+    color:#FFFFFF;
+}
+
+.pof-ic-fields .mat-form-field, .pof-ic-fields .mat-form-field-flex {
+    height: 32px;
+    color: #003D7E;
+}
+
+.pof-ic-fields .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.pof-ic-fields .mat-form-field-infix {
+    padding: 0 !important;
+}
+
+.header-details {
+    font-weight: bold;
+    background-color: #DAEBFF;
+    color: #003D7E;
+    padding: 5px;
+}
+
+.pof-ic-table {
+    border: 1px solid rgba(0,0,0,.12);
+}
+
+
+.pof-ic-table th{ 
+    background-color: #DAEBFF !important;  
+    color: #003D7E !important; 
+    font-size: 12px !important; 
+    height: 28px !important; 
+    font-weight: bold !important; 
+}
+.pof-ic-table tr.mat-header-row {  
+    height: 38px !important;  
+    font-weight: bold;    
+}
+.pof-ic-table tr.mat-row {  
+    height: 35px !important;
+    font-size: 12px !important; 
+}
+.pof-ic-table td.mat-cell {
+    font-size: 12px !important; 
+}
+
+.pof-ic-table th.mat-header-cell:first-of-type, .pof-ic-table td.mat-cell:first-of-type, .pof-ic-table td.mat-footer-cell:first-of-type {
+    padding: 10px;
+    text-align:center;
+}
+
+.pof-ic-table th.mat-header-cell, .pof-ic-table td.mat-cell, .pof-ic-table td.mat-footer-cell {
+    padding: 10px;
+    border-right: 1px solid rgba(0,0,0,.12);
+    text-align:center;
+}

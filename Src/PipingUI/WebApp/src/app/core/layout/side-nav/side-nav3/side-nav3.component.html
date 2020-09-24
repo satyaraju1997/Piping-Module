@@ -1,0 +1,15 @@
+<a mat-list-item [ngStyle]="{'font-size': '12px'}" (click)="onItemSelected(item)"
+    [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}">
+    {{item.name}}
+
+    <span fxFlex *ngIf="item.subMenu && item.subMenu.length">
+        <span fxFlex></span>
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+            arrow_drop_down
+        </mat-icon>
+    </span>
+</a>
+<div *ngIf="expanded">
+    <app-side-nav3 *ngFor="let child of item.subMenu" [item]="child" [depth]="depth+1">
+    </app-side-nav3>
+</div>

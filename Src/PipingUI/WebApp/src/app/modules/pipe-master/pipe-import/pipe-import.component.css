@@ -1,0 +1,81 @@
+.breadcrumb{
+    height:30px; 
+    line-height: 25px;
+    background:  #E5E5E5;
+    padding: 2px; 
+}
+.card-data {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding:0px !important;
+}
+
+.input_fileupload--hidden{
+    display:none;
+  }
+
+  .mat-chip-list-stacked .mat-chip-list-wrapper .mat-standard-chip {
+    width: 500px !important;
+}
+
+.import-table table {
+    border-collapse: collapse;
+    width: 100%;
+    height:60vh !important;
+  }
+  
+  td.import-table-cell  {
+    text-align: left;
+    padding: 2px;
+    height: 28px !important; 
+    font-size: 12px !important; 
+  }
+  tr.import-table-row:first-child {background-color: #283545; font-weight:bold;color:#FFFFFF; height: 25px !important; }
+  tr.import-table-row:nth-child(even){background-color: #DAEBFF;  height: 25px !important; }
+
+  /* Table */
+
+ th{ 
+    background-color: #DAEBFF !important;  
+    color: #003D7E !important; 
+    font-size: 12px !important; 
+    height: 28px !important;  
+    font-weight: bold !important;  
+}
+tr.mat-header-row {  
+    height: 25px !important;     
+}
+tr.mat-row {  
+    font-size: 12px !important; 
+}
+td.mat-cell
+{
+    font-size: 12px !important; 
+} 
+
+.pdf-img, .excel-img {
+    width: 20px;     
+}
+
+.file-chip {
+    background: #E5E5E5 !important;
+    justify-content: space-between  !important;
+    
+ }
+
+.mat-standard-chip.mat-chip-with-trailing-icon {
+    margin:3px 5px !important;
+    padding: 5px !important;
+}
+
+.mat-standard-chip {
+    border-radius:5px !important;
+    min-height:30px !important;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove {
+    color: red;
+    opacity: .7;
+    text-align: right !important;
+}

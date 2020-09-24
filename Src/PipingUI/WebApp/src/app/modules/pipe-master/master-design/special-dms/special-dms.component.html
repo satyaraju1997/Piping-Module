@@ -1,0 +1,116 @@
+<div fxLayout="column" fxFlex class="special-dms" fxLayoutGap="20px">
+    <div fxFlex="50" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="20px" fxLayoutGap.xs="20px">
+        <div fxFlex class="dm-code">
+            <mat-card class="card-content">
+                <div class="content1">
+                    <mat-card-content class="sectioncontent">
+                          <table mat-table [dataSource]="ODMDataSource" class="basic-table">
+                            <ng-container matColumnDef="DMCode">
+                              <th mat-header-cell *matHeaderCellDef> DM Code </th>
+                              <td mat-cell *matCellDef="let element"> {{element.DMCode}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="Description">
+                              <th mat-header-cell *matHeaderCellDef> Description </th>
+                              <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="InitialSuceptability">
+                              <th mat-header-cell *matHeaderCellDef> Initial Suceptability </th>
+                              <td mat-cell *matCellDef="let element"> {{element.InitialSuceptability}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="SeverityIndex">
+                              <th mat-header-cell *matHeaderCellDef> Severity Index </th>
+                              <td mat-cell *matCellDef="let element"> {{element.SeverityIndex}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="VeryHigh">
+                              <th mat-header-cell *matHeaderCellDef> Very High </th>
+                              <td mat-cell *matCellDef="let element"> {{element.VeryHigh}} </td>
+                            </ng-container>
+          
+          
+                            <ng-container matColumnDef="High">
+                              <th mat-header-cell *matHeaderCellDef> High </th>
+                              <td mat-cell *matCellDef="let element"> {{element.High}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="Medium">
+                              <th mat-header-cell *matHeaderCellDef> Medium </th>
+                              <td mat-cell *matCellDef="let element"> {{element.Medium}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="Low">
+                              <th mat-header-cell *matHeaderCellDef> Low </th>
+                              <td mat-cell *matCellDef="let element"> {{element.Low}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="Found">
+                              <th mat-header-cell *matHeaderCellDef> Found </th>
+                              <td mat-cell *matCellDef="let element"> {{element.Found}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="DamageReductionFactor">
+                              <th mat-header-cell *matHeaderCellDef> Reduction Factor </th>
+                              <td mat-cell *matCellDef="let element"> {{element.DamageReductionFactor}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="DamageFactor">
+                              <th mat-header-cell *matHeaderCellDef> Damage Factor </th>
+                              <td mat-cell *matCellDef="let element"> {{element.DamageFactor}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="POF">
+                              <th mat-header-cell *matHeaderCellDef> POF </th>
+                              <td mat-cell *matCellDef="let element"> {{element.POF}} </td>
+                            </ng-container>
+          
+                            <tr mat-header-row *matHeaderRowDef="ODMDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: ODMDisplayedColumns;"></tr>
+          
+                          </table>                
+                      </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div fxFlex="50" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="20px" fxLayoutGap.xs="20px">
+        <div fxFlex="60" class="drawing">
+            <mat-card class="card-data">
+                <div class="content1">
+                    <div class="pipe-master-section-header">
+                        Drawing
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="sectioncontent">
+                        <img src='assets/Drawing.png' alt="Drawing" class="Drawing-img">
+                    </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+
+        <div fxFlex="40" class="reports">
+            <mat-card class="card-data">
+                <div class="content1">
+                    <div class="pipe-master-section-header">
+                        Inspection Confidence
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="sectioncontent">
+                        <div class="pipe-master-bar-chart">
+                            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                            </canvas>
+                        </div>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

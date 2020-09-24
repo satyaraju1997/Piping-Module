@@ -1,0 +1,58 @@
+<form>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" class="pipe-report-header">
+        <div>PIPE MASTER</div>
+        <mat-icon (click)="onClickBack()">reply</mat-icon>
+    </mat-card>
+
+    <mat-tab-group class="tabs">
+        <mat-tab label="Basic Data">
+            <div class="add-data">
+                <app-add-basic-data [unitID]="unitID"></app-add-basic-data>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Design Data">
+            <div class="add-data">
+                <app-add-design-data [unitID]="unitID"></app-add-design-data>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Internal Corrosion">
+            <div class="add-data">
+                <app-add-internal-corrosion></app-add-internal-corrosion>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="External Corrosion">
+            <div class="add-data">
+                <app-add-external-corrosion ></app-add-external-corrosion>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Environment Cracking">
+            <div class="add-data">
+                <app-add-environment-cracking></app-add-environment-cracking>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="COF">
+            <div class="add-data">
+                <app-add-cof></app-add-cof>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Trendable DMs">
+            <div class="add-data">
+                <app-add-trendable-dms></app-add-trendable-dms>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Non-Trendable DMs">
+            <div class="add-data">
+                <app-add-non-trendable-dms></app-add-non-trendable-dms>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+
+</form>

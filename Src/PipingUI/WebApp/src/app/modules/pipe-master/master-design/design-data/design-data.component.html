@@ -1,0 +1,275 @@
+<div fxLayout="row" fxFlex class="basic-data" fxLayoutGap="20px">
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="20px" fxLayoutGap.xs="20px">
+        <div fxFlex="50" class="design-status">
+            <mat-card class="card-content">
+                <div class="content1">
+                    <div class="pipe-master-section-header" fxLayout="row">
+                        <div fxFlex="90" fxLayoutAlign="start center">Design Data</div>
+                        <div fxFlex="10" fxLayoutAlign="end center">
+                            <div>
+                                <mat-icon class="sectionheadericon" matTooltip="Edit" (click)="onEditData()">edit</mat-icon>
+                            </div>                            
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="sectioncontent">
+                        <mat-grid-list cols="6" rowHeight="49px" [gutterSize]="'1px'" style="width: 99.8%;">
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Design Temp</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.designTemperature}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Material Std</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.materialStd}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Insulated</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.insulated}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Design Pressure</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.designPressure}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Material Grade</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.materialGrade}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Insulation Type</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.insulationType}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Operating Temp</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.operatingTemperature}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Material Code</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.materialCode}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Nominal Diameter</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.nominalDiameter}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Operating Pressure</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.operatingPressure}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">PWHT</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.pwht}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Nominal Thick</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.nominalThick}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Pipe Specification</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.pipeSpec}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Corrosion Allowance</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.corrosionAllowance}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Length</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.length}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Joint Efficiency</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.jointEfficiency}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">MDMT</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.mdmt}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Construction Code</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.constructionCode}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Allowable Stress</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.allowableStressMPA_S}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Yield Strength</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.yieldStrengthMPA_YS}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Tensile Strength</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.tensileStrengthMPA_TS}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Flow Stress</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.flowStress_FS}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Last Measured Year</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.lastMeasuredYear_LMY}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Pr Min Req Thk-I</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.prMinReqThkInternal_PMTI}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Stength Ratio</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.stengthRatio_SR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Last Measured Thick</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.lastMeasuredThick_LMT}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Effective Min Req Thk</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.effectiveMinReqThk_EMRT}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Structural Min Thk</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.structuralMinThk_SMT}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">User Cal Min Req Thk</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.userCalPrMinReqThk_UMT}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Effective Thk</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{designData?.effectiveThk_ETHK}}</mat-label>
+                            </mat-grid-tile>
+                         
+                          </mat-grid-list>
+                    </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+
+        <div fxFlex="50" class="design-inspection">
+            <mat-card class="card-content">
+                <div class="content1">                    
+                    <mat-card-content class="sectioncontent">
+                        <table mat-table [dataSource]="designDataSource" class="basic-table">
+                            <ng-container matColumnDef="documentNo">
+                              <th mat-header-cell *matHeaderCellDef> Document No </th>
+                              <td mat-cell *matCellDef="let element"> {{element.documentNo}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="description">
+                              <th mat-header-cell *matHeaderCellDef> Description </th>
+                              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="format">
+                              <th mat-header-cell *matHeaderCellDef> Format </th>
+                              <td mat-cell *matCellDef="let element"> {{element.format}} </td>
+                            </ng-container>
+          
+          
+                            <ng-container matColumnDef="edit">
+                              <th mat-header-cell *matHeaderCellDef> </th>
+                              <td mat-cell *matCellDef="let element"> </td>
+                            </ng-container>
+          
+                            <tr mat-header-row *matHeaderRowDef="designDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: designDisplayedColumns;"></tr>
+          
+                          </table>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+    
+    <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="10px" fxLayoutGap.xs="10px">
+        <div class="dm-card">
+            <mat-card class="card-data">
+                <div class="content1">
+                    <div class="pipe-master-section-header" fxLayout="row">
+                        <div fxFlex="90" fxLayoutAlign="start center">Drawing</div>
+                        <div fxFlex="10" fxLayoutAlign="end center">
+                            <div>
+                                <mat-icon class="sectionheadericon" matTooltip="Attach">attach_file</mat-icon>
+                            </div>                            
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="sectioncontent">
+                        <img class="drawing-img" src='assets/Drawing.png' alt="Drawing" class="Drawing-img">
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

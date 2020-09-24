@@ -1,0 +1,529 @@
+<div fxLayout="column" fxLayoutGap="5px">
+    <mat-icon fxFlex="5" fxLayoutAlign="end start" class="close-icon" (click)="closeDialog()">clear</mat-icon>
+    <mat-card class="dialog-header matrix-card" fxLayout="row" fxLayoutAlign="start center">
+
+        <div>Edit Design Data</div>
+
+    </mat-card>
+
+    <mat-dialog-content [formGroup]="editData">
+        <div fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+
+            <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Design Temperature
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="100">
+                                <input type="number" matInput formControlName="designTemperature">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Design Pressure
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="designPressure">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Operating Temperature
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="operatingTemperature">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Operating Pressure
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="operatingPressure">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+
+
+                </div>
+
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Material Std
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <mat-select class="dropdown-icon" formControlName="materialStd">
+                                    <mat-option *ngFor="let material of materialStdOptions" [value]="material.text">
+                                        {{material.text}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Material Grade
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <mat-select class="dropdown-icon" formControlName="materialGrade">
+                                    <mat-option *ngFor="let material of materialGradeOptions" [value]="material.text">
+                                        {{material.text}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Material Code
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <mat-select class="dropdown-icon" formControlName="materialCode">
+                                    <mat-option *ngFor="let code of materialCodes" [value]="code.text">
+                                        {{code.text}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">User Cal Min Req Thk</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input matInput formControlName="userCalPrMinReqThk_UMT">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                </div>
+
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Nominal Diameter
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="nominalDiameter">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Nominal Thick
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="nominalThick">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Length                          
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="length">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Construction Code
+                           
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input matInput formControlName="constructionCode">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Pipe Specification</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input matInput formControlName="pipeSpec">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Joint Efficiency
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="jointEfficiency">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Corrosion Allowance
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="corrosionAllowance">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">MDMT</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="mdmt">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Use LMT
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                        <mat-card  class="checkbox-field">
+                        <mat-checkbox   color="primary" formControlName="useLastMeasuredThick_ULMT"></mat-checkbox>
+                        </mat-card>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">PWHT
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card  class="checkbox-field">
+                        <mat-checkbox color="primary" fxFlex="90" formControlName="pwht"></mat-checkbox>
+                            </mat-card>
+
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Insulated
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card  class="checkbox-field">
+                        <mat-checkbox fxFlex="90" color="primary" formControlName="insulated"></mat-checkbox>
+                    </mat-card>
+
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Insulation Type                            
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+
+                            <ng-container *ngIf="editData.controls.insulated.value; else noData">
+                                <mat-form-field fxFlex="90">
+                                    <mat-select *ngIf="editData.controls.insulated.value" class="dropdown-icon" formControlName="insulationType">
+                                        <mat-option *ngFor="let type of insulationTypes" [value]="type.text">
+                                            {{type.text}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </ng-container>
+                            <ng-template #noData>
+                                <mat-form-field fxFlex="90">
+                                    <mat-select class="dropdown-icon" formControlName="insulationType">
+                                        <mat-option>
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </ng-template>
+                        </mat-card>
+                    </div>
+
+
+                </div>
+            </mat-card>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+
+            <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Allowable Stress
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number"  matInput formControlName="allowableStressMPA_S">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+
+
+
+
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Yield Strength
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="yieldStrengthMPA_YS">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+
+
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Tensile Strength
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="tensileStrengthMPA_TS">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+
+                    <!-- <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Pr Min Req Thk-E</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="card-field mat-elevation-z8">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" matInput formControlName="prMinReqThkExternal_PMTE">
+                            </mat-form-field>
+                        </mat-card>
+                    </div> -->
+
+                </div>
+
+
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                </div>
+            </mat-card>
+        </div>
+       
+        <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+            <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Last Measured Year</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1" readonly matInput formControlName="lastMeasuredYear_LMY">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Last Measured Thick</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="lastMeasuredThick_LMT">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Min Required Thk Option
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <mat-select tabindex="-1"  class="dropdown-icon" readonly formControlName="minReqThkOption_MRTO">
+                                    <mat-option value="Pr Min Thk">Pr Min Thk</mat-option>
+                                    <mat-option value="Nom Thk - CA">Nom Thk - CA</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Structural Min Thk
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="structuralMinThk_SMT">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <span fxFlex="100"></span>
+                                <br>
+                                <br>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <span fxFlex="100"></span>
+                                <br>
+                            </div>
+                </div>
+            </mat-card>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+            <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Flow Stress
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="flowStress_FS">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+               
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Pr Min Req Thk</mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="prMinReqThkInternal_PMTI">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Effective Min Thk
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="effectiveMinReqThk_EMRT">
+                            </mat-form-field>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-label fxFlex="100">Effective Thk
+                            <span class="mandatory">*</span>
+                        </mat-label>
+                    </div>
+                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                            <mat-form-field fxFlex="90">
+                                <input type="number" tabindex="-1"  readonly matInput formControlName="effectiveThk_ETHK">
+                            </mat-form-field>
+                        </mat-card>
+
+                    </div>
+                </div>
+                <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <span fxFlex="100"></span>
+                                <br>
+                                <br>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <span fxFlex="100"></span>
+                                <br>
+                            </div>
+
+                </div>
+            </mat-card>
+        </div>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-dialog-content>
+    <mat-dialog-actions  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <button mat-raised-button class="primary" (click)="onSaveData()">
+            Save
+        </button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,27 @@
+<div class="cof">
+        <mat-card class="card-content">
+            <div class="content1">
+                <div class="pipe-master-section-header" fxLayout="row">
+                    <div fxFlex="90" fxLayoutAlign="start center">COF Data</div>
+                    <div fxFlex="10" fxLayoutAlign="start center">
+                        <div fxFlex="50">
+                            <mat-icon class="sectionheadericon" matTooltip="Edit" (click)="onEditData()">edit</mat-icon>
+                        </div>
+                        <div fxFlex="50">
+                            <mat-icon class="sectionheadericon" matTooltip="Save">save</mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <mat-card-content class="sectioncontent">
+                    <mat-grid-list cols="4" rowHeight="60px" [gutterSize]="'1px'" style="width: 99.8%;">
+                        <mat-grid-tile *ngFor="let tile of COFDataFields" [colspan]="tile.cols" [rowspan]="tile.rows" [class]="tile.class" [style.border]="tile.border">
+                          <mat-label *ngIf="tile.isLabel" class="grid-label">{{tile.label}}</mat-label>
+                          <mat-label *ngIf="!tile.isLabel" class="grid-label">{{COFData[tile.field]}}</mat-label>
+                        </mat-grid-tile>
+                      </mat-grid-list>
+                </mat-card-content>
+
+            </div>
+        </mat-card>
+
+</div>

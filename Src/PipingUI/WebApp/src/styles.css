@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+
+ 
+  :focus,:active{
+    outline: none !important;
+  }
+
+  .app-body, .mat-card, .mat-table, .mat-form-field, .mat-chip, .mat-expansion-panel, .mat-grid-tile, .mat-list-item,
+  .mat-menu, .mat-paginator, .mat-tab-group, .mat-tab-label, .mat-card-title, .mat-card-content, .mat-label, .mat-select,
+  .mat-form-field-infix {
+    font-size: 12px;
+    font-family: 'Open Sans' !important;
+  }
+
+  .mat-snack-bar-container.error-snackbar {
+    background: #FF5252;
+  }
+  
+  .mat-snack-bar-container.success-snackbar {
+    background: #4CAF50;
+  }
+  .mat-snack-bar-container.warning {
+     background:#FFAB40;
+  }
+
+.mat-icon {
+  cursor: pointer;
+}
+
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab,
+.mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn {
+  font-size: 12px;
+  font-family: 'Open Sans' !important;
+}
+
+.mandatory {
+  color: red;
+  margin-left: 3px;
+}
+
+.close-icon {
+  cursor: pointer;
+  margin-top: -35px;
+  margin-left: 504px;
+  position: fixed;
+  border-radius: 100%;
+  background-color:white;
+  z-index: 9999;
+}
+
+.primary {
+  background-color: #003D7E !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px !important;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #677483 !important; 
+  border-radius: 6px !important;
+}
+
+.mat-raised-button {
+  line-height:30px !important;
+  padding: 0px 10px !important;
+}
+
+.prob-grid-list {
+  /* width:228px; */
+  width: 280px;
+  height:228px;
+  margin-left: -40px;
+  background-color:#FFFFFF;
+}
+
+.label-title {
+  color:#000000;
+  font-size:14px;
+  padding-left:2px;
+}
+
+.matrix-tile {       
+  /* justify-content:center !important;  */
+  /* font-size:10px !important; */
+  /* height:38px !important; */
+  /* width:54px !important; */
+  /* border:2px solid #FFFFFF; */
+  /* text-align:cnter; */
+}
+
+.matrix-header-title, .matrix-bottom-title {
+    padding-right: 18px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size:12px !important;    
+    display: block !important;
+    font-weight: bold;
+    text-align:center;
+}
+
+.matrix-header-title {
+   color: #003D7E !important;
+}
+
+.box {
+  display: table;
+  width: 93%;
+  height: 34px;
+  border-spacing: 6px;     
+  border-radius:4px;
+  cursor:pointer;
+} 
+
+.circle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;    
+  font-size: 10px;  
+  color: #000000;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 0px solid #000;
+  cursor:pointer;
+}
+
+.high {
+  color: #FF4E4E;
+}
+.medium-high {
+  color: #FCC1C0;
+}
+.medium {
+  color: #F5FE8C;
+}
+.low {
+  color: #ADFFC4;
+}
+.matrix-labels {
+  font-size: 12px;
+  margin-top: 3px;
+}

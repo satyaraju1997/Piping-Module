@@ -1,0 +1,77 @@
+<mat-card class="card-data">
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div fxFlex="25">
+            <span class="title">STRUCTURAL MIN THK</span>
+        </div>
+        <div fxFlex="65" fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="60" fxLayoutAlign="center center" class="search-box">
+                <mat-form-field floatLabel="never" appearance="legacy" class="field--custom">
+                    <input matInput placeholder="Search Component Type, Diameter..."
+                        (keyup)="applyFilter($event.target.value)">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </div>
+            <div fxFlex="40"></div>
+        </div>
+        <div fxFlex="10" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
+            <mat-icon matTooltip="Add" matTooltipPosition="above" class="toolbar-button" (click)="onAdd()">add
+            </mat-icon>
+            <mat-icon matTooltip="Delete" matTooltipPosition="above" class="toolbar-button">delete</mat-icon>
+            <mat-icon matTooltip="Download" matTooltipPosition="above" class="toolbar-button">cloud_download</mat-icon>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+        <div fxFlex="100">
+
+            <table mat-table [dataSource]="dataSource" matSort class="struct-table">
+
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox color="primary"></mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox color="primary"></mat-checkbox>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="componentType">
+                    <th mat-header-cell *matHeaderCellDef> Component Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.componentType}} </td>
+                </ng-container>
+                <ng-container matColumnDef="outsideDiameter_IN">
+                    <th mat-header-cell *matHeaderCellDef> Outside Diameter (IN) </th>
+                    <td mat-cell *matCellDef="let element"> {{element.outsideDiameterInches}} </td>
+                </ng-container>
+                <ng-container matColumnDef="outsideDiameter_MM">
+                    <th mat-header-cell *matHeaderCellDef> Outside Diameter (MM) </th>
+                    <td mat-cell *matCellDef="let element"> {{element.outsideDiameterMM}} </td>
+                </ng-container>
+                <ng-container matColumnDef="structalMinThk_MM">
+                    <th mat-header-cell *matHeaderCellDef> Structural Min Thk (MM) </th>
+                    <td mat-cell *matCellDef="let element"> {{element.structureWallThicknessMM}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="edit">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon matTooltip="Edit" matTooltipPosition="above" class="grid-icon" (click)="onEditData(element.id)">edit
+                        </mat-icon>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon matTooltip="Delete" class="grid-icon" matTooltipPosition="above">delete</mat-icon>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayColumns;sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+
+            </table>
+
+            <mat-paginator showFirstLastButtons [hidePageSize]="true" [pageSize]="15"></mat-paginator>
+        </div>
+    </div>
+
+</mat-card>

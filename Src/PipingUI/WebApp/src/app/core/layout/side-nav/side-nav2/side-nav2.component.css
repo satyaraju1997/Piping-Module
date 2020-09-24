@@ -1,0 +1,42 @@
+.mat-list-item.left-menu.expand {
+    border-left: 4px solid #FFC925;
+    background: #394D6D;
+    color: #ffffff;
+}
+
+.dots-img {
+    width: 23px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.left-menu1 .mat-list-item-content, .left-menu .mat-list-item-content {
+    color: #C5CCD6;
+    padding-left: 8px !important;
+    padding-right: 0 !important;
+}
+
+.child-items {
+    width: 79%;
+}
+
+.space {
+   margin-left: 16px;
+}
+
+.mat-list-item.left-menu.expand{
+    background: #394d6d;
+}
+
+.mat-list-item.left-menu1.expanded span{
+    color:#C5CCD6 !important;
+}
+
+.mat-list-item.left-menu1.secondNavActive {
+    background-color: #FFC925 !important;
+    color: #000000 !important;
+}
+
+.left-menu1.active img{
+    filter: brightness(0) invert(1);
+}

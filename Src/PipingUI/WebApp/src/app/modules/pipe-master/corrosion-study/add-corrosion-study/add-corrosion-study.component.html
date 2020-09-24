@@ -1,0 +1,613 @@
+<div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px" class="corr-study-header">
+        <div class="corr-study-title">NEW PIPE REPORT</div>
+        <mat-icon matTooltip="Back" matTooltipPosition="above" (click)="onBack()">reply
+        </mat-icon>
+    </div>
+
+    <div fxLayout="column" fxFlex class="corr-study" fxLayoutGap="10px">
+        <div fxFlex="55" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" fxLayout.sm="column"
+            fxLayout.xs="column" fxLayoutGap.sm="5px" fxLayoutGap.xs="5px">
+            <div fxFlex="40" class="corr" fxLayoutGap="10px">
+                <mat-card class="card-content">
+                    <div class="section-header" fxLayout="row" fxLayoutAlign="start center">
+                        <div>Corrosion Loop Data</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <form *ngIf="clusterData !== null" [formGroup]="corrosionLoopData">
+                        <div class="section-content" fxLayout="column" fxLayoutGap="10px">
+                            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start start" fxLayout.sm="column"
+                                fxLayout.xs="column">
+                                <div fxFlex="50" fxLayout="column" fxLayoutGap="7px">
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45" fxLayout="row" fxLayoutGap="2px">
+                                            <div>Plant Code</div>
+                                            <span class="mandatory">*</span>
+                                        </mat-label>
+                                        <mat-card fxFlex="50" class="card-field">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="plantCode">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45" fxLayout="row" fxLayoutGap="2px">
+                                            <div>Fluid Code</div>
+                                            <span class="mandatory">*</span>
+                                        </mat-label>
+                                        <mat-card fxFlex="50" class="card-field">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="fluidCode">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Sub Fluid</mat-label>
+                                        <mat-card fxFlex="50" class="card-field">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="subFluidCode">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Loop No</mat-label>
+                                        <mat-card fxFlex="50" class="read-only">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="loopNo">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                </div>
+                                <div fxFlex="50" fxLayout="column" fxLayoutGap="7px">
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Min Temp</mat-label>
+                                        <mat-card fxFlex="50" class="read-only">
+                                            <mat-form-field class="field">
+                                                <input matInput formControlName="minTemp">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Max Temp</mat-label>
+                                        <mat-card fxFlex="50" class="read-only">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="maxTemp">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Max Pressure</mat-label>
+                                        <mat-card fxFlex="50" class="read-only">
+                                            <mat-form-field class="field">
+                                                <input matInput type="text" formControlName="maxPressure">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="45">Min Pressure</mat-label>
+                                        <mat-card fxFlex="50" class="read-only">
+                                            <mat-form-field class="field">
+                                                <input matInput readonly formControlName="minPressure">
+                                            </mat-form-field>
+                                        </mat-card>
+                                        <span fxFlex="5"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div fxLayout="column" fxLayoutGap="10px">
+                                <div fxLayoutAlign="start center">
+                                    <mat-label fxFlex="21">Process Description</mat-label>
+                                    <mat-card fxFlex="76" class="card-text-field">
+                                        <mat-form-field class="field">
+                                            <textarea matInput formControlName="processDesc"></textarea>
+                                        </mat-form-field>
+                                    </mat-card>
+                                    <span fxFlex="3"></span>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+                                    <button mat-raised-button class="primary" type="button" (click)="onClick($event)">
+                                        <mat-icon>attach_file</mat-icon>Attach
+                                    </button>
+                                    <input #fileUpload type="file" multiple="true" class="input-fileupload-hidden"
+                                        (change)="onFileChange($event)"
+                                        accept=".xls,.xlsx,.csv,.pdf,.doc,.docx,.jpg,.jpeg,.bmp,.png">
+
+                                    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
+                                        <mat-chip-list class="choose-file">
+                                            <mat-chip *ngFor="let f of displayFileName" (removed)="fileRemove(f.name)"
+                                                removable="true" fxLayout="row" fxLayoutGap="5px" class="file-chip">
+                                                <img src="{{f.icon}}" class="excel-img" [alt]="f.extension">{{f.name}}
+                                                <mat-icon matChipRemove>cancel</mat-icon>
+                                            </mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+
+            <div fxFlex="60" fxLayout="column" fxLayoutGap="10px" class="calc-data">
+                <mat-card fxFlex="50" class="card-content">
+                    <div class="section-header" fxLayout="row" fxLayoutAlign="start center">
+                        <div>COF</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="section-content corr-table">
+                        <form *ngIf="clusterData !== null" [formGroup]="cof">
+                            <table mat-table [dataSource]="cofDataSource">
+                                <ng-container matColumnDef="RefresentativeFluid">
+                                    <th mat-header-cell *matHeaderCellDef width="15%">Refresentative Fluid<span
+                                            class="mandatory">*</span></th>
+                                    <td mat-cell *matCellDef="let element">{{element.refresentativeFluid}}</td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:70px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="refresentativeFluid">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="FluidPhaseStored">
+                                    <th mat-header-cell *matHeaderCellDef width="15%"> Fluid Phase Stored<span
+                                            class="mandatory">*</span> </th>
+                                    <td mat-cell *matCellDef="let element">{{element.fluidPhase}}</td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:70px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <mat-select formControlName="fluidPhase">
+                                                    <mat-option value="Liquid">Liquid</mat-option>
+                                                    <mat-option value="Gas">Gas</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="DetectionRating">
+                                    <th mat-header-cell *matHeaderCellDef width="10%">Detection Rating<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.detectionRating}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <mat-select formControlName="detectionRating">
+                                                    <mat-option value="A">A</mat-option>
+                                                    <mat-option value="B">B</mat-option>
+                                                    <mat-option value="C">c</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="IsolationRating">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Isolation Rating<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.isolationRating}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <mat-select formControlName="isolationRating">
+                                                    <mat-option value="A">A</mat-option>
+                                                    <mat-option value="B">B</mat-option>
+                                                    <mat-option value="C">c</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="MitigationFactor">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Mitigation Factor<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.mitigationFactor}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="mitigationFactor">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="ToxicReferenceFluid">
+                                    <th mat-header-cell *matHeaderCellDef width="15%"> Toxic Ref Fluid<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.toxicRefFluid}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:70px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="toxicRefFluid">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="ToxicFluidFraction">
+                                    <th mat-header-cell *matHeaderCellDef width="15%"> Toxic Fluid Fraction<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.toxicFluidFraction}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:70px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="toxicFluidFraction">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="add">
+                                    <th mat-header-cell *matHeaderCellDef style="text-align:right !important;"
+                                        width="5%"></th>
+                                    <td mat-cell *matCellDef="let element; let i=index"
+                                        style="text-align:right !important;">
+                                        <button mat-mini-fab color="warn" class="table-button" (click)="onDeleteCOF(i)">
+                                            <mat-icon class="table-icon">delete</mat-icon>
+                                        </button>
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef
+                                        style="text-align:right !important;vertical-align: middle !important;">
+                                        <button mat-mini-fab color="primary" class="table-button" (click)="onAddCOF()">
+                                            <mat-icon class="table-icon">add</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="toxicCalculationDisplayColumns;sticky: true"></tr>
+                                <tr mat-row *matRowDef="let row; columns: toxicCalculationDisplayColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="toxicCalculationDisplayColumns"></tr>
+                            </table>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card fxFlex="50" class="card-content">
+                    <div class="section-header" fxLayout="row" fxLayoutAlign="start center">
+                        <div>IOW</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="section-content corr-table">
+                        <form *ngIf="clusterData !== null" [formGroup]="iow">
+                            <table mat-table [dataSource]="iowDataSource">
+                                <ng-container matColumnDef="iowNo">
+                                    <th mat-header-cell *matHeaderCellDef width="20%"> IOW No<span
+                                            class="mandatory">*</span></th>
+                                    <td mat-cell *matCellDef="let element">{{element.iowNo}}</td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:90px !important;" class="readonly-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput readonly value="A1-AL-1-IOW2" formControlName="iowNo">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="parameter">
+                                    <th mat-header-cell *matHeaderCellDef width="20%"> Parameter<span
+                                            class="mandatory">*</span></th>
+                                    <td mat-cell *matCellDef="let element">{{element.parameter}}</td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:90px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <mat-select value="Temperature" formControlName="parameter">
+                                                    <mat-option value="Temperature">Temperature</mat-option>
+                                                    <mat-option value="Pressure">Pressure</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="unit">
+                                    <th mat-header-cell *matHeaderCellDef width="12%"> Unit<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <mat-select value="degC" formControlName="unit">
+                                                    <mat-option value="degC">degC</mat-option>
+                                                    <mat-option value="Mpa">Mpa</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="max">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Max<span
+                                            class="mandatory">*</span> </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.max}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:45px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="max">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="min">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Min<span
+                                            class="mandatory">*</span> </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.min}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:45px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="min">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="tagNo">
+                                    <th mat-header-cell *matHeaderCellDef width="12%"> Tag No<span
+                                            class="mandatory">*</span>
+                                    </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.tagNo}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="tagNo">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="relatedequipmentNos">
+                                    <th mat-header-cell *matHeaderCellDef width="15%"> Rel Unit Nos </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.relUnitNos}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:70px !important;" class="card-field">
+                                            <mat-form-field style="width:100%;">
+                                                <input matInput formControlName="relUnitNos">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="add">
+                                    <th mat-header-cell *matHeaderCellDef style="text-align:right !important;"
+                                        width="5%"></th>
+                                    <td mat-cell *matCellDef="let element; let i=index;"
+                                        style="text-align:right !important;">
+                                        <button mat-mini-fab color="warn" class="table-button" (click)="onDeleteIOW(i)">
+                                            <mat-icon class="table-icon">delete</mat-icon>
+                                        </button>
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef
+                                        style="text-align:right !important;vertical-align: middle !important;">
+                                        <button mat-mini-fab color="primary" class="table-button" (click)="onAddIOW()">
+                                            <mat-icon class="table-icon">add</mat-icon>
+                                        </button>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="iowDisplayColumns;sticky: true"></tr>
+                                <tr mat-row *matRowDef="let row; columns: iowDisplayColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="iowDisplayColumns"></tr>
+
+                            </table>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <div fxFlex="45" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px" fxLayout.sm="column"
+            fxLayout.xs="column" fxLayoutGap.sm="10px" fxLayoutGap.xs="10px">
+            <mat-card class="card-content">
+                <div class="section-header" fxLayout="row" fxLayoutAlign="start center">
+                    <div>Cluster</div>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-card-content class="section-content">
+                    <form *ngIf="clusterData !== null" [formGroup]="cluster">
+                        <mat-tab-group (selectedTabChange)="selectedTab($event)">
+                            <mat-tab *ngFor="let cluster of clusters" label={{cluster.clusterNo}}>
+                                <div fxLayout="column" fxLayoutGap="15px">
+                                    <div fxLayout="row" fxLayoutGap="10px" class="cluster-data">
+                                        <div fxFlex="25" fxLayoutAlign="start center" fxLayoutGap="10px">
+                                            <span fxFlex="5"></span>
+                                            <mat-label fxFlex="40" class="cluster-fields">Max Temp</mat-label>
+                                            <mat-card fxFlex="50" class="card-field">
+                                                <mat-form-field fxFlex="90">
+                                                    <input matInput [(ngModel)]="cluster.maxTemperature"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                </mat-form-field>
+                                            </mat-card>
+                                            <span fxFlex="5"></span>
+                                        </div>
+
+                                        <div fxFlex="25" fxLayoutAlign="start center" fxLayoutGap="10px">
+                                            <span fxFlex="5"></span>
+                                            <mat-label fxFlex="40" class="cluster-fields">Min Temp</mat-label>
+                                            <mat-card fxFlex="50" class="readonly-field">
+                                                <mat-form-field fxFlex="90">
+                                                    <input matInput readonly>
+                                                </mat-form-field>
+                                            </mat-card>
+                                            <span fxFlex="5"></span>
+                                        </div>
+
+                                        <div fxFlex="25" fxLayoutAlign="start center" fxLayoutGap="10px">
+                                            <span fxFlex="5"></span>
+                                            <mat-label fxFlex="40" class="cluster-fields">Max Pressure</mat-label>
+                                            <mat-card fxFlex="50" class="readonly-field">
+                                                <mat-form-field fxFlex="90">
+                                                    <input matInput readonly>
+                                                </mat-form-field>
+                                            </mat-card>
+                                            <span fxFlex="5"></span>
+                                        </div>
+
+                                        <div fxFlex="25" fxLayoutAlign="start center" fxLayoutGap="10px">
+                                            <span fxFlex="5"></span>
+                                            <mat-label fxFlex="40" class="cluster-fields">Material</mat-label>
+                                            <mat-card fxFlex="50" class="readonly-field">
+                                                <mat-form-field fxFlex="90">
+                                                    <input matInput readonly>
+                                                </mat-form-field>
+                                            </mat-card>
+                                            <span fxFlex="5"></span>
+                                        </div>
+                                    </div>
+                                    <mat-divider></mat-divider>
+
+                                    <div class="table-content" fxLayout="row" fxLayoutGap="0px">
+                                        <table mat-table [dataSource]="clusterDatasource" class="corr-table">
+                                            <ng-container matColumnDef="dmCode">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> DM Code </th>
+                                                <td mat-cell *matCellDef="let element">{{element?.dmCode}}</td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="dmCode">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="fluid">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> Fluid </th>
+                                                <td mat-cell *matCellDef="let element">{{element?.fluid}}</td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="fluid">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="subFluid">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> Sub Fluid </th>
+                                                <td mat-cell *matCellDef="let element"> {{element?.subFluid}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput>
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="dMDescription">
+                                                <th mat-header-cell *matHeaderCellDef width="15%"> DM Description </th>
+                                                <td mat-cell *matCellDef="let element"> {{element?.dMDescription}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:140px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="dmDescription">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="dmRate">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> DM Rate </th>
+                                                <td mat-cell *matCellDef="let element"> {{element?.dmRate}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="dmRate">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="guideDocument">
+                                                <th mat-header-cell *matHeaderCellDef width="15%"> Guide Document </th>
+                                                <td mat-cell *matCellDef="let element">
+                                                    <a href="assets/POF-SCC.xlsx">{{element?.guideDocument}}</a>
+
+                                                </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:140px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="dmGuideDocument">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="dmType">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> DM Type </th>
+                                                <td mat-cell *matCellDef="let element"> {{element?.dmType}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <mat-select value="IC" class="select-color"
+                                                                formControlName="dmType">
+                                                                <mat-option value="IC">IC</mat-option>
+                                                                <mat-option value="SSC">SSC</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="source">
+                                                <th mat-header-cell *matHeaderCellDef width="10%"> Source </th>
+                                                <td mat-cell *matCellDef="let element"> {{element?.source}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="card-field">
+                                                        <mat-form-field style="width:100%;">
+                                                            <input matInput formControlName="source">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="add">
+                                                <th mat-header-cell *matHeaderCellDef
+                                                    style="text-align:right !important;" width="10%">
+                                                </th>
+                                                <td mat-cell *matCellDef="let element; let i=index"
+                                                    style="text-align:right !important;">
+                                                    <button mat-mini-fab color="warn" class="table-button"
+                                                        (click)="onDelete(i)">
+                                                        <mat-icon class="table-icon">delete</mat-icon>
+                                                    </button>
+                                                </td>
+                                                <td mat-footer-cell *matFooterCellDef
+                                                    style="text-align:right !important;vertical-align: middle !important;">
+                                                    <button mat-mini-fab color="primary" class="table-button"
+                                                        (click)="onAddCluster(cluster.clusterNo)">
+                                                        <mat-icon class="table-icon">add</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+                                            <tr mat-header-row *matHeaderRowDef="clusterDisplayColumns;sticky: true">
+                                            </tr>
+                                            <tr mat-row *matRowDef="let row; columns: clusterDisplayColumns;"></tr>
+                                            <tr mat-footer-row *matFooterRowDef="clusterDisplayColumns"></tr>
+
+                                        </table>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutAlign="center center">
+                                        <button mat-raised-button class="primary" (click)="onSubmit()">
+                                            <mat-icon>save</mat-icon> Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<div fxLayout="column">
+
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div fxFlex="25">
+            <span class="title">CORROSION STUDY</span>
+        </div>
+        <div fxFlex="70" style="text-align: center;">
+        </div>
+
+        <div fxFlex="5" fxLayout="row" fxLayoutAlign="end center">
+            <div fxFlex="50">
+                <mat-icon class="sectionheadericon" matTooltip="Edit" (click)="onAdd()">add</mat-icon>
+            </div>
+            <div fxFlex="50">
+                <mat-icon class="sectionheadericon" (click)="onEditCorrosionStudy()" matTooltip="Save">edit</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="corr-table">
+    <table mat-table [dataSource]="corrosionStudyDataSource">
+
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox color="primary"></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-checkbox color="primary" (click)="onCheckRecord(element.loopNo)"></mat-checkbox>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="equipmentNo">
+            <th mat-header-cell *matHeaderCellDef width="10%">Plant </th>
+            <td mat-cell *matCellDef="let element"> {{element.plantCode}} </td>
+        </ng-container>
+        <ng-container matColumnDef="FromTo">
+            <th mat-header-cell *matHeaderCellDef width="15%"> Fluid </th>
+            <td mat-cell *matCellDef="let element"> {{element.fluidCode}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ReportNo">
+            <th mat-header-cell *matHeaderCellDef width="10%"> Loop No </th>
+            <td mat-cell *matCellDef="let element"> {{element.loopNo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Rank">
+            <th mat-header-cell *matHeaderCellDef width="10%"> Min Temp </th>
+            <td mat-cell *matCellDef="let element"> {{element.minTemperature}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Condition">
+            <th mat-header-cell *matHeaderCellDef width="10%"> Max Temp </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxTemperature}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef width="10%"> Max Pressure </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxPressure}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Result">
+            <th mat-header-cell *matHeaderCellDef width="30%"> Cluster </th>
+            <td mat-cell *matCellDef="let element"> {{element.clusterNo}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="PipingReportDisplayColumns;sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: PipingReportDisplayColumns;"></tr>
+
+    </table>
+</div>
+</div>

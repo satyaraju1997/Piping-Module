@@ -1,0 +1,54 @@
+.app-login {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.login-image {
+    width: 100%;
+    height: 100vh;
+}
+
+.loginData {
+    height: 100vh;
+}
+
+.login-header {
+    font-weight: bold;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #333948;
+}
+
+.login-fields {
+    width: 100%;
+    font-family: 'Open Sans';
+}
+
+.login-form {
+    padding: 0 65px;
+}
+
+.login-button {
+    width: 100%;
+    font-size: 14px;
+    background-color: #333948;
+    font-family: 'Open Sans';
+}
+
+.forgot-pswd{
+    cursor: pointer;
+    font-family: 'Open Sans';
+}
+.create-one {
+    cursor: pointer;
+    color: #003D7E;
+}
+
+.create-acc {
+    font-size: 12px;
+    font-family: 'Open Sans';
+}

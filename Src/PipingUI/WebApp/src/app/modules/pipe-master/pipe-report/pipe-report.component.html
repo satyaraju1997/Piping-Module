@@ -1,0 +1,165 @@
+<div fxLayout="column" fxFlex class="report" fxLayoutGap="10px">
+    <!-- <mat-card class="card-data"> -->
+
+    <div class="toolbar">
+        <div class="title">
+            Ammonia » Ammonia 01 » AL » P01.AL1001
+        </div>
+        <div class="title pipe-header">
+            PIPE REPORT
+        </div>
+        <div>
+            <button mat-icon-button id="btn_Add" matTooltip="Add" matTooltipPosition="above">
+                <mat-icon (click)="onAdd()">add</mat-icon>
+            </button>
+            <button mat-icon-button id="btn_Edit" matTooltip="Edit" matTooltipPosition="above">
+                <mat-icon (click)="onEdit()">edit</mat-icon>
+            </button>
+            <button mat-icon-button id="btn_Copy" matTooltip="Copy" matTooltipPosition="above">
+                <mat-icon aria-label="Copy">camera_enhance</mat-icon>
+            </button>
+            <button mat-icon-button id="btn_Copy" matTooltip="View" matTooltipPosition="above">
+                <mat-icon aria-label="View">visibility</mat-icon>
+            </button>
+            <button mat-icon-button id="btn_Print" matTooltip="Print" matTooltipPosition="above">
+                <mat-icon aria-label="Print" style="cursor: pointer;" (click)="onPrint()">print</mat-icon>
+            </button>
+            <button mat-icon-button id="btn_Download" matTooltip="Download" matTooltipPosition="above">
+                <mat-icon aria-label="Download" style="cursor: pointer;" (click)="onDownload()">get_app</mat-icon>
+            </button>
+            <button mat-icon-button style="border-right: 0px solid #003D7E;" id="btn_Mail" matTooltip="Mail"
+                matTooltipPosition="above">
+                <mat-icon aria-label="Mail">mail</mat-icon>
+            </button>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header style="height:30px !important;">
+                    <mat-panel-title style="font-family: 'Open Sans';">
+                        FILTERS
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                    </mat-panel-description>
+
+
+                </mat-expansion-panel-header>
+                <mat-divider></mat-divider>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Plant</mat-label>
+                            <mat-select></mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Fluid</mat-label>
+                            <mat-select></mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Status</mat-label>
+                            <mat-select></mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Defect</mat-label>
+                            <mat-select></mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Year of Inspection</mat-label>
+                            <mat-select></mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Unit No</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Report No</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25">
+                        <mat-form-field style="width:70%;">
+                            <mat-label>Risk</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+    <mat-card class="table-card">
+        <!-- <div class="table-container"> -->
+
+            <table mat-table [dataSource]="PipingReportDataSource" class="pipe-table">
+
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef width="5%">
+                        <mat-checkbox color="primary"></mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox color="primary" (change)="onCheckRecord(element.reportNo)"></mat-checkbox>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="equipmentNo">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Unit No </th>
+                    <td mat-cell *matCellDef="let element"> {{element.equipmentNo}} </td>
+                </ng-container>
+                <ng-container matColumnDef="ReportNo">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Report No </th>
+                    <td mat-cell *matCellDef="let element"> {{element.reportNo}} </td>
+                </ng-container>
+                <ng-container matColumnDef="FromTo">
+                    <th mat-header-cell *matHeaderCellDef width="15%"> From-To </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fromTo}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Rank">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Rank </th>
+                    <td mat-cell *matCellDef="let element"> {{element.consequenceRank}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Condition">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Condition </th>
+                    <td mat-cell *matCellDef="let element"> {{element.overallCondition}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Status </th>
+                    <td mat-cell *matCellDef="let element"> {{element.overallStatus}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Result">
+                    <th mat-header-cell *matHeaderCellDef width="15%"> Result </th>
+                    <td mat-cell *matCellDef="let element"> {{element.resultedInto}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Followup">
+                    <th mat-header-cell *matHeaderCellDef width="10%"> Follow up </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nextFollowUpDate | date:'dd/MM/yyyy' }} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="PipingReportDisplayColumns;sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: PipingReportDisplayColumns;"></tr>
+
+            </table>
+        <mat-paginator showFirstLastButtons [hidePageSize]="true" [pageSize]="10"></mat-paginator>
+
+        <!-- </div> -->
+    </mat-card>
+
+</div>

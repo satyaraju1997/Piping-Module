@@ -1,0 +1,92 @@
+.matrix-card {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;    
+    padding:8px !important;
+}
+.section-card {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;    
+    padding:8px !important;
+    padding-left:20px !important;
+    background-color: #E5E5E5;
+}
+
+.card-field {
+    height: 100%;
+    /* overflow-y: auto; */
+    word-wrap: break-word;    
+    padding:0px !important; 
+    padding-left:5px !important;
+    
+}
+
+.checkbox-field {
+    height: 20px;
+    width: 20px;
+   
+    word-wrap: break-word;    
+    padding:0px !important; 
+    
+}
+.mat-form-field-underline {
+    display: none !important;
+  }
+
+  .save-icon {
+    font-size:18px;
+    padding-top:4px;
+    color:#FFFFFF !important;
+}
+
+.checkbox-field .mat-checkbox-inner-container {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.checkbox-field .mat-checkbox .mat-checkbox-frame {  
+    border: 0px solid #003D7E !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-focused
+  {
+    background-color: #003D7E !important;
+    color:red  !important;
+    font-size:25px !important; 
+  }
+
+
+
+.card-field:focus-within
+{
+    background-color:#DAEBFF !important;    
+}
+
+.checkbox-field:focus-within
+{
+    background-color:#DAEBFF !important;    
+}
+
+input:focus
+{
+   font-weight:bold !important; 
+}
+button:focus{
+    font-weight:bold !important; 
+}
+input::-moz-selection { background: #DAEBFF; }
+input::selection { background: #DAEBFF; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+ 
+  

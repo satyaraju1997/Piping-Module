@@ -1,0 +1,254 @@
+.app-sidenav-container {
+    flex: 1;
+    height: calc(100vh - 60px);
+}
+
+.app-content {
+    padding: 10px;
+    min-height: 86%;
+}
+
+.sidenav1 {
+    background: #354053;
+    width: 314px;
+}
+
+.collapsed-sidenav {
+    background: #354053;
+    width: 105px;
+}
+
+.collapsed-sidenav .images{
+    width: 23px;
+}
+
+.sidenav2 {
+    background: #161726;
+    width: 140px;
+}
+
+.fluid-menu {
+    margin-left: 178px !important;
+}
+
+.sidenav2 .nav-list {
+    padding: 0 !important;
+}
+
+.dot, .lst-item {
+    height: 40px !important;
+}
+.list-item {
+    cursor: pointer;
+    color: #9babbf !important;
+    font-family: 'Open Sans';
+} 
+
+.list-item.active {
+  background-color: #2F394A !important;
+  color: #ffffff !important;
+}
+
+.list-item.active img{
+    filter: brightness(0) invert(1);
+}
+
+.list-item.active .label {
+    color: #ffffff;
+}
+
+.active path{
+    fill: #ffffff !important;
+  }
+
+.pipelinesidenav .mat-list-item-content {
+    cursor: pointer;
+    width: 270px;
+    margin-left: 16px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #2D3849;
+}
+
+.collapsed-sidenav  .mat-list-item-content {
+    width: auto;
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 10px !important;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #2D3849;
+}
+
+/* #2f394a */
+.quick-link {
+    margin-top: 60px !important;
+}
+
+.collapsed-quick-link {
+    margin-top: 0;
+}
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+
+.list-item-2{
+    color: #9babbf !important;
+    padding-bottom: 0 !important;
+}
+
+.images {
+    width: 24px;
+    margin-right: 10px;
+}
+ .dots-img {
+    width: 24px;
+    cursor: pointer;
+    margin-left: 33px;
+ }
+
+ .expanded-list {
+     padding-top: 0 !important;
+ }
+
+.label, .label-2 {
+    font-size: 12px;
+    padding-top:3px;
+}
+
+.label-3 {
+    font-size: 12px;
+}
+
+.subMenu-label {
+    font-size: 14px !important;
+    color: #9babbf !important;
+}
+
+.list-content {
+    width: max-content !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.plant-viewport {
+    width: 50px;
+    height: 80px;
+}
+
+.active {
+    color: #73FFE9;
+}
+
+.left-menu {
+    flex-direction: column !important;
+    max-width: 170px !important;
+}
+.left-menu .list-item {
+    height: auto !important;
+    padding-top: 5px !important;
+}
+
+.left-menu .list-item.active {
+    background-color: #2796ED !important;
+    color: #ffffff !important;
+}
+
+.left-menu .collapsed-quick-link.active {
+    background-color: #FFC925 !important;
+    color: #000000 !important;
+}
+
+.left-menu .collapsed-quick-link.active img {
+    filter: brightness(0) invert(0);
+}
+
+.left-menu .collapsed-quick-link.active .label {
+    font-weight: 600;
+    color: #000000;
+}
+.left-menu .list-item .mat-list-item-content {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.left-menu .list-item .mat-list-item-content .images, .left-menu .list-item .mat-list-item-content .label {
+    margin-right: 0 !important;
+}
+
+.sidenav-content1 {
+    margin-left: 105px !important;
+}
+
+.sidenav-content2 {
+    margin-left: 138px !important;
+}
+
+.sidenav3 {
+    height: calc(100% - 45%);
+    /* margin-left: 26px; */
+}
+
+.sidenav3 .mat-side-nav-content {
+    margin-left: 60px !important;
+}
+
+.dot-img {
+    width: 24px;
+    cursor: pointer;
+    margin-left: 22px;
+}
+
+.sidenav-content3 {
+    max-width: calc(100% - 19.7rem);
+    padding: 0px;
+    background: #E5E5E5;
+}
+
+.sidenav-content-view {
+    max-width: calc(100% - 15.2rem);
+    padding: 0px;
+    background: #E5E5E5;
+}
+
+.sidenav-content2 .app-sidenav-container .mat-drawer-backdrop.mat-drawer-shown {
+    visibility: hidden !important;
+}
+
+.sidenav1 svg{
+    color: #9babbf !important;
+} 
+
+.dot-img.last{
+    margin-left: 33px;
+    cursor: pointer;
+}
+
+.menu-header {
+    color: #9babbf;
+    font-size: 12px;
+    height: 26px;
+    margin: 20px 20px 0px 29px;
+    font-family: 'Open Sans';
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #2D3849;
+}
+
+.left-menu .menu-header {
+    margin: 5px 0px 0px 10px;
+    color: #9babbf;
+    font-size: 12px;
+    height: 26px;
+    font-family: 'Open Sans';
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #2D3849;
+}

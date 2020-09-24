@@ -1,0 +1,122 @@
+.toolbar-icon {
+    padding: 0 14px;
+  }
+
+.toolbar {
+    max-height: 60px !important;
+    min-height: 60px !important;
+}
+
+.header {
+    background-color: #333948;
+    height: 60px !important;
+}
+
+.logo {
+    margin-right: 9.5%;
+    font-size: 14px !important;
+    padding-left: 18px;
+    width: 168px;
+}
+
+.search {
+    border-radius: 25px;
+    width: 32%;
+    height: 38px;
+    border: 1px solid #f5f5f5;
+    margin-right: 20%;
+    background: #f5f5f5;
+    color: #5B7293;
+    font-size: 14px;
+}
+
+.profile-icon {
+    width: 30px;
+    border-radius: 50%;
+    height : 30px;    
+}
+
+.user-name {
+    font-size: 14px !important;
+    height: 14px;
+    margin-top: -6px;
+    font-family: 'Open Sans';
+}
+
+.role-name {
+    font-size: 11px;
+    height: 10px;
+    font-family: 'Open Sans'; 
+}
+
+.piping {
+    width: 6%;
+    font-size: 14px !important;
+    /* margin-right: 65px; */
+    font-family: 'Open Sans';
+}
+
+.basic {
+    width: 6%;
+    font-size: 14px !important;
+    margin-right: 25px;
+}
+
+.piping .mat-select-value, .basic .mat-select-value {
+    width: 73% !important;
+}
+
+.search .mat-form-field-suffix .mat-icon {
+    margin-top: 3px !important;
+    margin-right: 8px !important;
+}
+
+.search .mat-form-field-infix {
+    border-top: 0 !important;
+    top: -7px;
+    margin-left: 5px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.filter-img {
+    width: 14px;
+    margin-top: -3px;
+}
+
+.mat-select-panel {
+    margin-top: 30px;
+}
+
+.mat-form-field--custom {
+    padding: 0 5px;
+}
+.mat-form-field--custom .mat-form-field-wrapper .mat-form-field-flex {
+    margin-top: 5px;
+}
+
+.mat-form-field--custom .mat-input-underline, .mat-form-field--custom .mat-form-field-underline {
+    display: none !important;
+}
+
+.img-profile{
+    border-radius: 50%;
+    height : 70px;
+    width: 70px;  
+}
+
+.employee-icon {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.logout-button {
+    width: 80%;
+    left: 18px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #333948 !important;
+    font-family: 'Open Sans';
+}

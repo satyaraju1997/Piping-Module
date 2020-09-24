@@ -1,0 +1,74 @@
+<mat-sidenav-container fxLayout="row" class="app-sidenav-container">
+    <mat-sidenav #sideNav mode="side" opened="true" class="sidenav1" *ngIf="isExpanded; else notExpanded">
+        <mat-nav-list class="nav-list expanded-list">
+            <!-- <div class="menu-header">PLANT NAMES</div> -->
+            <mat-list-item class="list-item list pipelinesidenav" *ngFor="let item of leftMenu; let i = index"
+                (click)="activateClassNOpenSideNav(item, i)" [ngClass]="{'active': activeOnIndex === i}">
+                <img src={{item.icon}} alt="{{item.name}}" class="images">
+                <span class="label">{{item.name}}</span>
+                <span class="spacer"></span>
+                <img src='assets/3 Dots.svg' alt="dots" class="dots-img">
+            </mat-list-item>
+            <span class="dot" fxLayout="row" fxLayoutAlign="center center">
+                <img src='assets/3 Dots.svg' alt="dots" class="dots-img">
+            </span>
+
+            <div class="quick-link menu-header">QUICK LINKS</div>
+            <mat-list-item class="list-item pipelinesidenav" *ngFor="let item of quickLink" >
+                <img src="{{item.quickLinkIcon}}" alt="{{item.quickLinkName}}" class="images">
+                <span class="label">{{item.quickLinkName}}</span>
+            </mat-list-item>
+            <span class="dot" fxLayout="row" fxLayoutAlign="center center">
+                <img src='assets/3 Dots.svg' alt="dots" class="dots-img">
+            </span>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <ng-template #notExpanded>
+        <mat-sidenav #sideNav mode="side" opened="true" class="collapsed-sidenav">
+            <mat-nav-list class="nav-list left-menu">
+                <!-- <div class="menu-header">PLANT NAMES</div> -->
+                <mat-list-item class="list-item" (click)="collapsedLeftMenu(i)"
+                    [ngClass]="{'active': activeOnIndex === i}" *ngFor="let item of leftMenu; let i = index">
+                    <img fxFlex="100" src={{item.icon}} alt="ammonia" class="images">
+                    <span fxFlex="100" class="label">{{item.name}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src='assets/3 Dots.svg' alt="dots" class="dot-img last">
+                </mat-list-item>
+                <div class="quick-link menu-header">QUICK LINKS</div>
+                <mat-list-item class="list-item pipelinesidenav collapsed-quick-link left-menu"
+                (click)="collapsedLeftMenu(item)" *ngFor="let item of quickLink" [ngClass]="{'active': activeOnLink === item.quickLinkName}">
+                    <img src="{{item.quickLinkIcon}}" alt="{{item.quickLinkName}}" class="images">
+                    <span class="label">{{item.quickLinkName}}</span>
+            </mat-list-item>
+            <img src='assets/3 Dots.svg' alt="dots" class="dots-img">
+            </mat-nav-list>
+        </mat-sidenav>
+    </ng-template>
+
+    <mat-sidenav-content fxFlexFill [ngClass]="isExpanded ? 'fluid-menu' : 'sidenav-content1'">
+        <mat-sidenav-container fxLayout="row" class="app-sidenav-container">
+            <mat-sidenav #sideNav1 mode="side" role="navigation" class="sidenav2">
+                <mat-nav-list class="nav-list">
+                    <app-side-nav2 *ngFor="let item of fluidMenu; let i = index" [item]="item"
+                        (menuList)="menuList($event)"></app-side-nav2>
+                </mat-nav-list>
+            </mat-sidenav>
+
+            <mat-sidenav-content fxFlexFill class="sidenav-content2">
+                <mat-sidenav-container class="app-sidenav-container">
+                    <mat-sidenav #sideNav2 mode="over" position="center" role="navigation" class="sidenav3 sidenav">
+                        <mat-nav-list class="list-content">
+                            <app-side-nav3 *ngFor="let item of pipeMasterMenu" [item]="item" class="sidenav3 sidenav">
+                            </app-side-nav3>
+                        </mat-nav-list>
+                    </mat-sidenav>
+                    <mat-sidenav-content [ngClass]="isExpanded ? 'sidenav-content3' : 'sidenav-content-view'">
+                        <router-outlet></router-outlet>
+                    </mat-sidenav-content>
+                </mat-sidenav-container>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-sidenav-content>
+</mat-sidenav-container>

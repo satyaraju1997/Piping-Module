@@ -1,0 +1,52 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start start" class="app-login">
+        <div fxLayout="row" fxFlex="65" fxLayoutAlign="center center" class="login">
+            <img src="assets/Login_Image.jpg" alt="Login Image" class="login-image">
+        </div>
+
+        <div fxFlex="35">
+            <div fxLayout="column" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" class="loginData">
+                <div fxFlex="45" fxLayout="row" fxLayoutAlign="center center">
+                    <img src="assets/images/Login Logo.svg" alt="logo">
+                </div>
+                <div fxFlex="55" fxLayout="column" fxLayoutGap="35px" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" fxLayoutGap.xs="25px" fxLayoutGap.sm="25px" fxLayoutGap.md="25px">
+                    <div fxLayout="row" fxLayoutAlign="center center" class="login-header">Login</div>
+
+                    <div fxLayout="column" fxLayoutGap="5px" class="login-form">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <mat-form-field class="login-fields">
+                                <input matInput placeholder="User ID" formControlName="username">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <mat-form-field class="login-fields">
+                                <input matInput type="password" placeholder="Password" formControlName="password">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.xs="8px" fxLayoutGap.sm="8px">
+                            <div fxFlex="50" fxLayoutAlign="start center">
+                                <mat-checkbox color="primary" formControlName="rememberMe" >Remember me</mat-checkbox>
+                            </div>
+                            <div fxFlex="50" fxLayoutAlign="end center">
+                                <div class="forgot-pswd"><a (click)="forgotpassword()">Forgot password</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutGap="10px" class="login-form">
+                        <div fxLayoutAlign="center center">
+                            <button mat-flat-button color="primary" type="submit" class="login-button">Login</button>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" class="create-acc">
+                            <div>
+                                Don't have account? <a class="create-one">Create one</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>

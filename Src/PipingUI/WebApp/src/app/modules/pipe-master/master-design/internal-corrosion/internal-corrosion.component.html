@@ -1,0 +1,218 @@
+<div fxLayout="column" fxFlex class="basic-data" fxLayoutGap="20px">
+    <div fxFlex="50" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="20px" fxLayoutGap.xs="10px">
+        <div fxFlex="50" class="status">
+            <mat-card class="card-content">
+                <div class="content1">
+                    <div class="pipe-master-section-header" fxLayout="row">
+                        <div fxFlex="90" fxLayoutAlign="start center">Internal Corrosion</div>
+                        <div fxFlex="10" fxLayoutAlign="end center">
+                            <div>
+                                <mat-icon class="sectionheadericon" matTooltip="Edit" (click)="onEditData()">edit</mat-icon>
+                            </div>                            
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+
+                    <mat-card-content class="sectioncontent">
+                        <mat-grid-list cols="6" rowHeight="60px" [gutterSize]="'1px'" style="width: 99.8%;">
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Injection Points</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.injectionPoints}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Theoretical Corrosion Rate (TICR)</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.theoriticalCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="2" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Inspection Confidence</mat-label>
+                            </mat-grid-tile>
+                            <!-- <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label"></mat-label>
+                            </mat-grid-tile> -->
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Effective Corrosion Rate (EICR)</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.effectiveCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Measured LongTerm Corrosion Rate</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.measuredLCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Very High</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.veryHigh}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">Damage Factor</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.damageFactor}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Measured ShortTerm Corrosion Rate</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.measuredSCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">High</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.high}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-Data">
+                              <mat-label class="grid-Label">POF</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.pof}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Use Measured LICR</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.useMeasuredLCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Medium</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.medium}}</mat-label>
+                            </mat-grid-tile>
+
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Effective Age (AGE)</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.effectiveAge}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Use Measured SICR</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.useMeasuredSCR}}</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-Label">Low</mat-label>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="1" class="grid-data">
+                              <mat-label class="grid-label">{{internalCorrosionData?.low}}</mat-label>
+                            </mat-grid-tile>
+                           
+                          </mat-grid-list>
+                    </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+
+        <div fxFlex="50" class="inspection">
+            <mat-card class="card-content">
+                <div class="content1">
+                    <div class="pipe-master-section-header-drawing" fxLayout="row">
+                        <div fxLayoutAlign="start center">Drawing</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="sectioncontent">
+                        <img class="drawing-img" src='assets/Drawing.png' alt="Drawing" class="Drawing-img">
+                    </mat-card-content>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+    
+    <div fxFlex="50" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px" fxLayout.sm="column"
+        fxLayout.xs="column" fxLayoutGap.sm="20px" fxLayoutGap.xs="20px">
+        <div fxFlex="50" class="dm-card">
+            <mat-card class="card-data">
+                <div class="content1">
+                    <div class="pipe-master-section-header" fxLayout="row">
+                        <div fxLayoutAlign="start center">TML Trends</div>
+                    </div>
+                    <mat-card-content class="sectioncontent">
+                        
+                    </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+
+        <div fxFlex="50" class="reports">
+            <mat-card class="card-data">
+                <div class="content1">
+                    <mat-card-content class="sectioncontent">
+                        <table mat-table [dataSource]="ICDataSource" class="basic-table">
+                            <ng-container matColumnDef="TMLNo">
+                              <th mat-header-cell *matHeaderCellDef> TML No </th>
+                              <td mat-cell *matCellDef="let element"> {{element.TMLNo}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="NominalThk">
+                              <th mat-header-cell *matHeaderCellDef> Nominal Thk </th>
+                              <td mat-cell *matCellDef="let element"> {{element.NominalThk}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="Diameter">
+                              <th mat-header-cell *matHeaderCellDef> Diameter </th>
+                              <td mat-cell *matCellDef="let element"> {{element.Diameter}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="MinReqThk">
+                              <th mat-header-cell *matHeaderCellDef> Min Req Thk </th>
+                              <td mat-cell *matCellDef="let element"> {{element.MinReqThk}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="LastMeasuredThk">
+                              <th mat-header-cell *matHeaderCellDef> Last Measured Thk </th>
+                              <td mat-cell *matCellDef="let element"> {{element.LastMeasuredThk}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="LongTermCR">
+                              <th mat-header-cell *matHeaderCellDef> Long Term CR </th>
+                              <td mat-cell *matCellDef="let element"> {{element.LongTermCR}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="ShortTermCR">
+                              <th mat-header-cell *matHeaderCellDef> Short Term CR </th>
+                              <td mat-cell *matCellDef="let element"> {{element.ShortTermCR}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="HalfLife">
+                              <th mat-header-cell *matHeaderCellDef> Half Life </th>
+                              <td mat-cell *matCellDef="let element"> {{element.HalfLife}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="NextInspYear">
+                              <th mat-header-cell *matHeaderCellDef> Next Inspection </th>
+                              <td mat-cell *matCellDef="let element"> {{element.NextInspYear}} </td>
+                            </ng-container>
+          
+                            <ng-container matColumnDef="edit">
+                              <th mat-header-cell *matHeaderCellDef width="2%"> </th>
+                              <td mat-cell *matCellDef="let element"> </td>
+                            </ng-container>
+          
+                            <tr mat-header-row *matHeaderRowDef="ICDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: ICDisplayedColumns;"></tr>
+          
+                          </table>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

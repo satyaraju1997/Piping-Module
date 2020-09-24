@@ -1,0 +1,231 @@
+<div fxLayout="column" fxLayoutGap="5px">
+    <mat-icon fxFlex="5" fxLayoutAlign="end start" class="close-icon" (click)="closeDialog()">clear</mat-icon>
+    <mat-card class="dialog-header matrix-card" fxLayout="row" fxLayoutAlign="start center">
+        <div>Edit Basic Data</div>
+    </mat-card>
+    <mat-dialog-content [formGroup]="editBasicData">
+
+        <div fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+                <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="10px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Line No
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="equipmentNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Description</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="description">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">From To</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="fromTo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">P&ID No</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="pandIDNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+
+
+
+                    </div>
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="10px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Plant
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="plantCode">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Fluid
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="fluid">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Area
+
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="areaCode">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Train
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="train">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+
+                    <div fxFlex="34" fxLayout="column" fxLayoutGap="10px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Loop No
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="corrosionLoopNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Cluster No
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="pipeClusterNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Year In Service
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="card-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput formControlName="yearInService">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <br><br>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <br>
+                        </div>
+
+                    </div>
+                </mat-card>
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+                <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="10px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Status
+
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput tabindex="-1" readonly formControlName="overallStatus">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+
+                    </div>
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="10px">
+
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Next Inspection Date
+
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput tabindex="-1" readonly formControlName="nextInspectionDate">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+
+                    </div>
+                    <div fxFlex="34" fxLayout="column" fxLayoutGap="10px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Next Follow Up Date
+
+                            </mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input matInput tabindex="-1" readonly formControlName="nextFollowDate">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <button mat-raised-button class="primary" type="submit" (click)="onSaveData()">Save</button>
+        <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+    </mat-dialog-actions>
+</div>

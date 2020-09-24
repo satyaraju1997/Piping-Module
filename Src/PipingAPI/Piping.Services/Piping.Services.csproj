@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Piping.Common\Piping.Common.csproj" />
+    <ProjectReference Include="..\Piping.Contracts\Piping.Contracts.csproj" />
+    <ProjectReference Include="..\Piping.DTO\Piping.DTO.csproj" />
+    <ProjectReference Include="..\Piping.Helper\Piping.Helper.csproj" />
+    <ProjectReference Include="..\Piping.Repository\Piping.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

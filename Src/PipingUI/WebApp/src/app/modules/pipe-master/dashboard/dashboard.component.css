@@ -1,0 +1,217 @@
+.dashboard {
+    padding: 20px;
+    height: calc(100vh - 60px);
+}
+
+.piping-status, .defect-fluid {
+    height: calc(50vh - 70px) !important;
+    font-family: 'Open Sans' !important;
+}
+
+.inspection, .spreadsheet {
+    height: calc(50vh - 50px) !important;
+    font-family: 'Open Sans' !important;
+}
+
+.doughnut-chart {
+    height: 200px;
+    margin-top: 10px;
+}
+
+.bar-chart {
+    position: relative;
+    height: 240px;
+    /* margin-top: 10px !important; */
+    padding: 13px;
+}
+
+.card-content {
+    height: 100% !important;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding: 0px !important;
+    font-family: 'Open Sans' !important;
+}
+
+.card-data {
+    height: 100% !important;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding: 0px !important;
+    background-color: #ffffff;
+    font-family: 'Open Sans' !important;
+}
+
+.content {
+    font-size: 14px;
+    overflow-y: scroll;
+    font-family: 'Open Sans';
+    /* height: -webkit-fill-available; */
+}
+
+.content1 {
+    font-size: 14px;
+    font-family: 'Open Sans';
+    /* height: -webkit-fill-available; */
+}
+
+.status {
+    padding-bottom: 5px;
+    font-family: 'Open Sans';
+    border-bottom: 1px solid #DAEBFF;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    /*  min-height: 44.4vh; */
+    padding: 0px !important;
+}
+
+/* .mat-card-title, .mat-card-content {
+      display: block !important;
+      margin: 0px !important; 
+      font-size:11px !important;    
+      color:#003D7E !important;
+      padding:0px !important;
+  } */
+
+.section-header {
+    background-color: #FFFFFF;
+    font-size: 14px !important;
+    padding: 11px 0px 12px 16px;
+    color: #161726 !important;
+    font-weight: bold;
+    font-family: 'Open Sans';
+}
+
+.sectionheader {
+    background-color: #FFFFFF !important;
+    margin-bottom: 0px !important;
+}
+
+.sectioncontent {
+    background-color: #FFFFFF !important;
+}
+
+.sectionheadericon {
+    color: #003D7E;
+    font-size: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+/* Table */
+
+.piping-spreadsheet-table th {
+    background-color: #DAEBFF !important;
+    color: #003D7E !important;
+    font-size: 12px !important;
+    height: 28px !important;
+    font-weight: bold !important;
+}
+
+.piping-spreadsheet-table tr.mat-header-row {
+    height: 38px !important;
+    font-weight: bold;
+}
+
+.piping-spreadsheet-table tr.mat-row {
+    height: 35px !important;
+    font-size: 12px !important;
+}
+
+.piping-spreadsheet-table td.mat-cell {
+    font-size: 12px !important;
+}
+
+.mat-paginator-outer-container {
+    display: flex !important;
+    height: 28px !important;
+}
+
+.mat-paginator {
+    width: 100%;
+}
+
+.mat-paginator .mat-paginator-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    min-height: 35px !important;
+    height: 30px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.mat-paginator-range-actions, .mat-paginator-range-label {
+    flex-grow: 1 !important;
+    justify-content: flex-end !important;
+}
+
+.defect {
+    width: 66px;
+}
+
+.mat-form-field--defect-fluid {
+    padding: 0 16px;
+}
+
+.mat-form-field--defect-fluid .mat-input-underline, .mat-form-field--defect-fluid .mat-form-field-underline {
+    display: none !important;
+}
+
+.high {
+    color: #FF4E4E;
+}
+
+.medium-high {
+    color: #FCC1C0;
+}
+
+.medium {
+    color: #F5FE8C;
+}
+
+.low {
+    color: #ADFFC4;
+}
+
+.matrix-labels {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.basic {
+    width: 6%;
+    font-size: 14px !important;
+    /* margin-right: 25px; */
+}
+
+.mat-select-panel {
+    margin-top: 30px;
+}
+
+.mat-form-field--custom {
+    padding: 0 5px;
+}
+.mat-form-field--custom .mat-form-field-wrapper .mat-form-field-flex {
+    margin-top: 5px;
+}
+
+.mat-form-field--custom .mat-input-underline, .mat-form-field--custom .mat-form-field-underline {
+    display: none !important;
+}
+
+/* .box.ng-star-inserted[style*=red]:hover{
+    background-color: #b40303 !important;
+}
+.box.ng-star-inserted[style*=pink]:hover{
+    background-color: #a0515f !important;
+}
+
+.box.ng-star-inserted[style*=yellow]:hover{
+    background-color: #b4b405 !important;
+}
+.box.ng-star-inserted[style*=green]:hover{
+    background-color: #024502 !important;
+} */

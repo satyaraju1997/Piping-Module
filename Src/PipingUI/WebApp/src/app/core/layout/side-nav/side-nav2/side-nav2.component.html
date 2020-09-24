@@ -1,0 +1,32 @@
+<a mat-list-item class="left-menu" [ngStyle]="{'padding-left': (depth + 5) +'px', 'font-size': '12px', 'width': '93%', 'font-family': 'Open Sans'}"
+    (click)="onItemSelected(item)"
+    [ngClass]="{'active': item.route ? router.isActive(item.route, true): false,'expand': expanded}">
+    <span class="item">{{item.name}}</span>
+
+    <span fxFlex *ngIf="item.subMenu && item.subMenu.length; else noChildren">
+        <span class="space"></span>
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+            arrow_drop_down
+        </mat-icon>
+    </span>
+
+    <ng-template #noChildren>
+        <span fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <span fxFlex></span>
+            <img src="assets/3 Dots.svg" alt="dots" class="dots-img">
+        </span>
+    </ng-template>
+</a>
+<div *ngIf="expanded">
+    <a mat-list-item class="left-menu1" *ngFor="let child of item.subMenu"
+        [ngStyle]="{'padding-left': (depth + 15) +'px', 'font-size': '12px', 'width': '89%', 'font-family': 'Open Sans'}"
+        (click)="onChildItemSelected(child)"
+        [ngClass]="{'expanded': expanded, 'secondNavActive':activeOnIndex===item.index && depth>=1}">
+        <span class="item">{{child.name}}</span>
+
+            <span fxLayout="row" style="margin-left: 15px;">
+                <!-- <span fxFlex></span> -->
+                <img src="assets/3 Dots.svg" alt="dots" class="dots-img">
+            </span>
+    </a>
+</div>

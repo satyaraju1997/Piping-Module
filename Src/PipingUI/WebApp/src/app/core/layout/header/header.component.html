@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" class="toolbar" fxFlex fxFlex.md="100%">
+    <mat-toolbar-row class="header">
+        <img src="assets/images/Header Logo.svg" class="logo" fxLayout="row" fxLayoutGap="10px" aria-hidden="false">
+        <mat-form-field floatLabel="never" appearance="legacy" class="search mat-form-field--custom">
+            <mat-icon matSuffix>search</mat-icon>
+            <input matInput placeholder="Search item or Report Number...">
+        </mat-form-field>
+        <img src="assets/Filter.svg" alt="filter" class="filter-img">
+        <mat-form-field floatLabel="never" class="piping mat-form-field--custom">
+            <mat-label>Piping</mat-label>
+            <mat-select [(value)]="selected">
+                <mat-option *ngFor="let option of pipingOptions" [value]=option.id>
+                    {{option.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field floatLabel="never" class="basic mat-form-field--custom">
+            <mat-label>Basic</mat-label>
+            <mat-select [(ngModel)]="basic">
+                <mat-option value="basic">Basic</mat-option>
+                <mat-option value="advanced">Advanced</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <img src="data:image/png;base64,{{userInfo.employeePhoto}}" class="profile-icon">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <span fxLayout="row" fxLayoutGap="5px">
+                    <span style="height: 36px;">
+                        <div class="user-name" fxLayoutAlign="start start">{{userInfo.employeeName}}</div>
+                        <div class="role-name" fxLayoutAlign="start start">{{userInfo.role}}</div>
+                    </span>
+                    <mat-icon class="employee-icon">arrow_drop_down</mat-icon>
+                </span>                
+            </button>        
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon style="font-size: 20px;margin-right: 5px;">edit</mat-icon>
+                Edit Profile
+            </button>
+            <button mat-menu-item>
+                <mat-icon style="font-size: 20px;margin-right: 5px;">lock</mat-icon>
+                Change Password
+            </button>
+            <button mat-menu-item>
+                <mat-icon style="font-size: 20px;margin-right: 5px;">help</mat-icon>
+                About
+            </button>
+            <button mat-flat-button class="logout-button" (click)='logout()'>
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

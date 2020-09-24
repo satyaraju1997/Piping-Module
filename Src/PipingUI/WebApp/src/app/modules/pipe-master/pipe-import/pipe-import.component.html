@@ -1,0 +1,51 @@
+<mat-card  class="card-data">
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div fxFlex="100">
+            <span class="title">PIPE IMPORT</span>
+        </div>      
+    </div>
+
+<div fxLayout="row" class="master-data" fxLayoutGap="10px">
+    <div fxFlex="100">
+        <mat-form-field appearance="none">
+            <button mat-raised-button color="primary" *ngIf="displayFileName.length===0" (click)="onClick($event)" type="button" style="color:#FFFFFF !important; width:300px;">
+                <mat-icon stype="padding-top:5px;color:#FFFFFF !important;">attach_file</mat-icon> &nbsp;&nbsp;&nbsp;&nbsp; Choose Pipe Master File &nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+            <input #fileUpload type="file" multiple="false" class="input_fileupload--hidden" (change)="onFileChange($event)" accept=".xls,.xlsx,.csv">
+            <br>
+            <span *ngIf="isValid" style="color:red;font-size: 12px;">Please upload valid Pipe Master (xls/xlsx/csv)
+            </span>
+            <div fxLayout="row"  fxLayoutGap="10px">
+                <div >
+            <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical" style="width:500px !important;">
+                <mat-chip *ngFor="let f of displayFileName" (removed)="fileRemove(f.name)" removable="true"  class="file-chip">
+                        <img src="{{f.icon}}" class="excel-img" [alt]="f.extension">  {{f.name}} &nbsp;&nbsp; [ {{f.size}} ] &nbsp;&nbsp;[ {{rows}} ]
+                    <mat-icon matChipRemove style="float:right;">cancel</mat-icon>
+                </mat-chip>
+            </mat-chip-list>
+            </div>
+            <div>
+               
+            <button mat-raised-button color="primary" *ngIf="displayFileName.length!=0" type="button" style="color:#FFFFFF !important; width:120px;" (click)="onImport()">
+                <mat-icon stype="padding-top:5px;color:#FFFFFF !important;">cloud_upload</mat-icon> &nbsp;&nbsp;&nbsp; Import &nbsp;&nbsp;&nbsp;
+            </button>
+        </div>
+    </div>
+        </mat-form-field>
+
+
+
+
+        <table class="import-table">
+            <tbody>
+                <tr *ngFor="let row of data" class="import-table-row">
+                    <td *ngFor="let val of row" class="import-table-cell">
+                        {{val}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</mat-card>

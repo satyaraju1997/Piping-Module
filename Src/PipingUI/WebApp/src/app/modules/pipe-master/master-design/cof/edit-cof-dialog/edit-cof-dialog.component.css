@@ -1,0 +1,9 @@
+.cof-close-icon {
+    cursor: pointer;
+    margin-top: -35px;
+    margin-left: 864px !important;
+    position: fixed;
+    border-radius: 100%;
+    background-color: white;
+    z-index: 9999;
+}

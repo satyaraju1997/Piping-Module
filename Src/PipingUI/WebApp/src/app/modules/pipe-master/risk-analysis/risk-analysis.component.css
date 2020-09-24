@@ -1,0 +1,250 @@
+.risk-analysis {
+    padding: 20px;
+    /* height: calc(100vh - 100px); */
+}
+
+.risk-matrix {
+    /* height: calc(47vh); */
+}
+
+.risk-chart {
+    /* height: calc(50vh); */
+}
+
+.risk-grid {
+    height: calc(60vh);
+}
+
+.risk-card-data {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding: 0px !important;
+    background: #E5E5E5;
+}
+
+.breadcrumb {
+    height: 30px;
+    line-height: 25px;
+    background: #FFFFFF;
+    padding: 2px;
+}
+
+.title {
+    color: #003D7E !important;
+    font-size: 12px;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 10px;
+    font-weight: 600;
+    float: left;
+    font-family: 'Open Sans' !important;
+}
+
+table {
+    width: 100%;
+}
+
+.matrix-header {
+    padding-left: 16px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    font-size: 12px !important;
+    color: #000000 !important;
+    font-weight: 600;
+    font-family: 'Open Sans';
+}
+
+.matrix-content {
+    background-color: #FFFFFF !important;
+    font-family: 'Open Sans';
+}
+
+/* Matrix */
+
+/* .matrix-tile {
+    justify-content: center !important;
+    font-size: 10px !important;
+    height: 38px !important;
+    width: 38px !important;
+    border: 2px solid #FFFFFF;
+    text-align: cnter;
+} */
+
+.matrix-bottom-title {
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px !important;
+    color: #000000 !important;
+    display: block !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+.matrix-card {
+    height: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    padding: 0px !important;
+}
+
+.content1 {
+    font-size: 14px;
+    height: -webkit-fill-available;
+}
+
+/* Table */
+
+/* th {
+    background-color: #DAEBFF !important;
+    color: #003D7E !important;
+    font-size: 12px !important;
+    height: 28px !important;
+    font-weight: bold !important;
+}
+
+tr.mat-header-row {
+    height: 25px !important;
+    font-weight: bold;
+}
+
+td.mat-cell {
+    font-size: 12px !important;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 5px !important;
+} */
+
+/* .mat-paginator-outer-container {
+    display: flex !important;
+    height: 28px !important;
+}
+
+.mat-paginator {
+    width: 100%;
+}
+
+.mat-paginator .mat-paginator-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    min-height: 35px !important;
+    height: 30px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.mat-paginator-range-actions, .mat-paginator-range-label {
+    flex-grow: 1 !important;
+    margin-left: 0 !important;
+    justify-content: flex-end !important;
+    margin: 0 !important;
+} */
+
+.mat-form-field-underline {
+    display: none !important;
+}
+
+.frm-label {
+    padding: 10px !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+}
+
+/* ::ng-deep .edit-data-fields .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.3em 0 1.0em 0 !important;
+} */
+
+.mat-paginator-outer-container {
+    display: flex !important;
+    height: 28px !important;
+}
+
+.mat-paginator {
+    width: 100%;
+}
+
+.mat-paginator .mat-paginator-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    min-height: 35px !important;
+    height: 30px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.mat-paginator-range-actions, .mat-paginator-range-label {
+    flex-grow: 1 !important;
+    justify-content: flex-end !important;
+}
+
+.edit-data-fields .mat-form-field-flex {
+    height: 30px !important;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.edit-data-fields .mat-form-field-wrapper {
+    padding-bottom: 5px !important;
+}
+
+.edit-data-fields .mat-form-field-infix {
+    padding: 0 !important;
+}
+
+.grid-header-icon {
+    color: #003D7E;
+    padding-top: 2px;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+    margin-bottom: 0px !important;
+}
+
+.high {
+    color: #FF4E4E;
+}
+
+.medium-high {
+    color: #FCC1C0;
+}
+
+.medium {
+    color: #F5FE8C;
+}
+
+.low {
+    color: #ADFFC4;
+}
+
+.matrix-labels {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.analysis-table th {
+    background-color: #DAEBFF !important;
+    color: #003D7E !important;
+    font-size: 12px !important;
+    height: 28px !important;
+    font-weight: bold !important;
+}
+
+.analysis-table tr.mat-header-row {
+    height: 38px !important;
+    font-weight: bold;
+}
+
+.analysis-table tr.mat-row {
+    height: 35px !important;
+    font-size: 12px !important;
+}
+
+.analysis-table td.mat-cell {
+    font-size: 12px !important;
+}

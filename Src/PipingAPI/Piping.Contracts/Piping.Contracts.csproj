@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Piping.DTO\Piping.DTO.csproj" />
+    <ProjectReference Include="..\Piping.Entities\Piping.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1010 @@
+<div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px" class="pipe-report-header">
+        <div class="pipe-report-title">NEW PIPE REPORT</div>
+        <mat-icon matTooltip="Back" matTooltipPosition="above" (click)="onBack()">reply
+        </mat-icon>
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="20px" class="report-content">
+        <mat-card fxFlex="25" fxLayout="column" class="master-data">
+            <form *ngIf="pipeReportData !== null" [formGroup]="pipeReport">
+                <div class="master-data-fields" fxLayoutGap="4px" fxLayout="column">
+                    <div class="user-input-field" fxLayout="row">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Line No
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="equipmentNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Description</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="description">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>From To</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="fromTo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Plant</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="plantCode">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Consequence</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Risk</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>P & ID No</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="pandIDNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Cluster No</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="clusterNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Material</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="material">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="auto-pick-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Fluid</mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-readonly-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="fluid">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+
+
+
+
+                    <div *ngIf="false" fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Report No
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="text" formControlName="reportNo">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Date
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="100">
+                                    <input matInput [matDatepicker]="picker" formControlName="nextFollowUpDate">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Inspection Type
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="100">
+                                    <mat-select class="select-color" formControlName="inspectionType">
+                                        <mat-option value="Preventive">Preventive</mat-option>
+                                        <mat-option value="Corrective">Corrective</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Overall Status
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="100">
+                                    <mat-select formControlName="overallStatus" class="select-color">
+                                        <mat-option value="Acceptable">Acceptable</mat-option>
+                                        <mat-option value="Good">Good</mat-option>
+                                        <mat-option value="Poor">Poor</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Revised Status
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="100">
+                                    <mat-select formControlName="revisedStatus" class="select-color">
+                                        <mat-option value="Acceptable">Acceptable</mat-option>
+                                        <mat-option value="Good">Good</mat-option>
+                                        <mat-option value="Poor">Poor</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="5px" class="user-input-field">
+                        <div fxFlex="40" fxLayoutAlign="start center">
+                            <mat-label>Total Man Hrs
+                                <span class="mandatory">*</span>
+                            </mat-label>
+                        </div>
+                        <div fxFlex="60">
+                            <mat-card fxFlex="100" class="pipe-card-field">
+                                <mat-form-field fxFlex="95">
+                                    <input matInput type="number" formControlName="totalManHours">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+
+                    <div class="attach-files">
+                        <div fxLayout="column" fxLayoutGap="7px" fxLayoutAlign="start center">
+                            <button mat-raised-button class="primary" (click)="onClick($event)" type="button">
+                                <mat-icon>attach_file</mat-icon>&nbsp;Attach Files
+                            </button>
+
+                            <input #fileUpload type="file" multiple="true" class="input-fileupload-hidden"
+                                (change)="onFileChange($event)"
+                                accept=".xls,.xlsx,.csv,.pdf,.doc,.docx,.jpg,.jpeg,.bmp,.png">
+
+                            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
+                                <mat-chip-list class="choose-file">
+                                    <mat-chip *ngFor="let f of displayFileName" (removed)="fileRemove(f.name)"
+                                        removable="true" fxLayout="row" fxLayoutGap="5px" class="file-chip">
+                                        <img src="{{f.icon}}" class="excel-img" [alt]="f.extension">{{f.name}}
+                                        <mat-icon matChipRemove>cancel</mat-icon>
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+
+        <div fxFlex="75" fxLayout="column" class="description-panels">
+            <div fxFlex="100" class="master-data-fields" fxLayout="column" fxLayoutGap="10px">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="title-detail">
+                                INSPECTION PROGRAM
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <mat-card *ngFor="let data of inspecProgram" class="inspec-prgrm">
+                            {{data}}
+                        </mat-card>
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span class="title-detail">TML</span>
+                            </mat-panel-title>
+                            <mat-panel-description>
+
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-divider></mat-divider>
+
+                        <form *ngIf="pipeReportData !== null" [formGroup]="tmlList">
+                            <table mat-table [dataSource]="tmlDataSource" class="tml-table">
+                                <ng-container matColumnDef="tmlNo">
+                                    <th mat-header-cell *matHeaderCellDef width="9%"> TML No</th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.tmlNo}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="text" formControlName="tmlNo">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="corrosionType">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Corrosion Type </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.corrosionType}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:60px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:60px !important;" floatLabel="never">
+                                                <mat-select formControlName="corrosionType">
+                                                    <mat-option value="Internal">Internal</mat-option>
+                                                    <mat-option value="External">External</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="componentType">
+                                    <th mat-header-cell *matHeaderCellDef width="10%"> Component Type </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.componentType}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:60px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:60px !important;" floatLabel="never">
+                                                <mat-select formControlName="componentType">
+                                                    <mat-option value="Pipe">Pipe</mat-option>
+                                                    <mat-option value="Elbow">Elbow</mat-option>
+                                                    <mat-option value="Tee">Tee</mat-option>
+                                                    <mat-option value="Tapping">Tapping</mat-option>
+
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nominalDiameter">
+                                    <th mat-header-cell *matHeaderCellDef width="9%">Nom Dia </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.nominalDiameter}}
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="nominalDiameter">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nominalThick">
+                                    <th mat-header-cell *matHeaderCellDef width="9%"> Nom Thk </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.nominalThick}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="nominalThick">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="lastMeasuredThick">
+                                    <th mat-header-cell *matHeaderCellDef width="9%">Last Measured Thk </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.lastMeasuredThick}}
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="lastMeasuredThick">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="year">
+                                    <th mat-header-cell *matHeaderCellDef width="9%">Year In Service </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.yearInService}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="yearInService">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="measuredThick">
+                                    <th mat-header-cell *matHeaderCellDef width="9%"> Measured Thk </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.measuredThick}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="measuredThick">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="remainingLife">
+                                    <th mat-header-cell *matHeaderCellDef width="9%"> Remaining Life </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.remainingLife}} </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card style="width:50px !important;" class="pipe-card-field">
+                                            <mat-form-field style="width:50px !important;">
+                                                <input matInput type="number" formControlName="remainingLife">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nextInspectionDate">
+                                    <th mat-header-cell *matHeaderCellDef width="9%"> Next Insp Date </th>
+                                    <td mat-cell *matCellDef="let element; let i=index"> {{element.nextInspectionDate | date: 'MM/dd/yyyy'}}
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef>
+                                        <mat-card class="pipe-card-field">
+                                            <mat-form-field style="width:78px !important;">
+                                                <!-- <input matInput formControlName="nextInspectionDate"> -->
+                                                <input matInput [matDatepicker]="picker2" formControlName="nextInspectionDate">
+                                                <mat-datepicker-toggle matSuffix [for]="picker2">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker2></mat-datepicker>
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="add">
+                                    <th mat-header-cell *matHeaderCellDef style="text-align:right;" width="7%">
+
+                                    </th>
+                                    <td mat-cell *matCellDef="let element; let i=index" style="text-align:right;">
+                                        <button mat-mini-fab type="button" color="warn" class="button30" (click)="onDeleteTML(i)">
+                                            <mat-icon class="icon30">delete</mat-icon>
+                                        </button>
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef style="text-align:right;">
+                                        <button mat-mini-fab type="button" color="primary" class="button30" (click)="onAddTmL()">
+                                            <mat-icon class="icon30">add</mat-icon>
+                                        </button>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="tmlColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: tmlColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="tmlColumns"></tr>
+
+                            </table>
+                        </form>
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span class="title-detail">OBSERVATIONS</span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-divider></mat-divider>
+                        <!-- <form  *ngIf="pipeReportData !== null" [formGroup]="inspectionObservationList"> -->
+
+                            <form *ngIf="pipeReportData !== null" [formGroup]="pipeReport">
+                        <div fxLayout="row" fxLayoutAlign="start center"
+                            style="padding:10px !important;font-size:12px !important;">
+
+                            <div fxLayout="row">
+
+                                <div fxFlex="50" fxLayoutAlign="start center">
+                                    <mat-label fxFlex="100">Insulation Condition
+                                        <span class="mandatory">*</span>
+                                    </mat-label>
+
+                                </div>
+                                <div fxFlex="50" fxLayoutAlign="start center">
+                                    <mat-card fxFlex="90" class="pipe-card-field ">
+                                        <mat-form-field fxFlex="100">
+                                            <mat-select formControlName="insulationCondition">
+                                                <mat-option value="BA">Below Average</mat-option>
+                                                <mat-option value="A">Average</mat-option>
+                                                <mat-option value="AA">Above Average</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </mat-card>
+                                </div>
+
+
+                            </div>
+                            <div fxLayout="row">
+
+                                <div fxFlex="50" fxLayoutAlign="start center">
+                                    <mat-label fxFlex="90">Repainted Year</mat-label>
+                                </div>
+                                <div fxFlex="50" fxLayoutAlign="start center">
+                                    <mat-card fxFlex="90" class="pipe-card-field ">
+                                        <mat-form-field fxFlex="100">
+                                            <input matInput formControlName="repaintedYear">
+                                        </mat-form-field>
+                                    </mat-card>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <table mat-table [dataSource]="observationDataSource" class="observation-table">
+                                <ng-container matColumnDef="observation">
+
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-card fxFlex="100" style="background-color: #CACFD2 !important;"
+                                            class="inspec-prgrm">
+                                            {{element.observation}}
+                                        </mat-card>
+
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef class="obs-list">
+                                        <mat-card fxFlex class="text-area-field"
+                                            style="background-color:#F2F3F4  !important;">
+                                            <mat-label fxFlex="94" fxLayout="row" fxLayoutAlign="start center">
+                                                {{observDesc}}</mat-label>
+                                            <mat-icon fxFlex="6" matSuffix style="font-size:40px;"
+                                                (click)="onListClick()">list</mat-icon>
+                                        </mat-card>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="add">
+
+                                    <td mat-cell *matCellDef="let element; let i=index;" style="text-align:right;" width="5%">
+                                        <button mat-mini-fab type="button" color="warn" class="button30" (click)="onDeleteObservation(i)">
+                                            <mat-icon class="icon30">delete</mat-icon>
+                                        </button>
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef class="add-obs">
+                                        <button mat-mini-fab type="button" color="primary" class="button30"
+                                            (click)="onAddObservation()">
+                                            <mat-icon class="icon30">add</mat-icon>
+                                        </button>
+                                    </td>
+
+                                </ng-container>
+                                <tr mat-row *matRowDef="let row; columns: observationColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="observationColumns"></tr>
+                            </table>
+                        </div>
+                        <!-- </form> -->
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span class="title-detail">INSPECTION CONFIDENCE</span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <mat-divider></mat-divider>
+
+                        <form *ngIf="pipeReportData !== null && inspecConfidence" [formGroup]="inspectionConfidenceList">
+                            <div>
+
+                                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px"
+                                    style="padding-bottom:10px !important;padding-top:10px !important;font-size:12px !important;">
+
+                                    <div fxFlex="25" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+
+                                        <div fxFlex="30">
+                                            <mat-label>Nom Dia</mat-label>
+
+                                        </div>
+                                        <div fxFlex="70">
+                                            <mat-card
+                                                style="background-color: #CACFD2 !important; width: 90%;height: 15px;padding: 7px !important; margin-bottom: 5px;">
+                                                
+                                                {{pipeReportData.nominalDiameter}}                                               
+                                            </mat-card>
+                                        </div>
+
+
+                                    </div>
+                                    <div fxFlex="25" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+
+                                        <div fxFlex="30">
+                                            <mat-label>Nom Thk</mat-label>
+
+                                        </div>
+                                        <div fxFlex="70">
+                                            <mat-card
+                                                style="background-color: #CACFD2 !important; width: 90%;height: 15px;padding: 7px !important; margin-bottom: 5px;">
+                                                <!-- <div *ngIf="pipeReportData.nominalThick"> -->
+                                                {{pipeReportData.nominalThick}}
+                                                <!-- </div> -->
+
+                                                <!-- <mat-form-field>
+                                                    <input matInput>
+                                                </mat-form-field> -->
+                                            </mat-card>
+                                        </div>
+
+
+                                    </div>
+                                    <div fxFlex="25" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+
+                                        <div fxFlex="40">
+                                            <mat-label>Measured Thk
+                                            </mat-label>
+                                        </div>
+                                        <div fxFlex="60">
+                                            <mat-card fxFlex="90" class="pipe-card-field">
+                                                <mat-form-field>
+                                                    <input matInput>
+                                                </mat-form-field>
+                                            </mat-card>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div fxFlex="25"></div>
+                                </div>
+                                <mat-divider></mat-divider>
+                                <div fxLayout="row" fxLayoutAlign="start center">
+
+                                    <table mat-table [dataSource]="inspecStrategy" class="insp-conf-table">
+                                        <ng-container matColumnDef="dmCode">
+                                            <th mat-header-cell *matHeaderCellDef width="7%"> DM Code </th>
+                                            <td mat-cell *matCellDef="let element" class="inspec-data">
+                                                {{element.dmCode}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="priority">
+                                            <th mat-header-cell *matHeaderCellDef width="7%"> Priority </th>
+                                            <td mat-cell *matCellDef="let element" class="inspec-data">
+                                                {{element.priority}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="frequency">
+                                            <th mat-header-cell *matHeaderCellDef width="10%"> Frequency </th>
+                                            <td mat-cell *matCellDef="let element" class="inspec-data">
+                                                {{element.frequency}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="program">
+                                            <th mat-header-cell *matHeaderCellDef width="30%"> Inspection Program </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.recommendedAction}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="ndtMethod">
+                                            <th mat-header-cell *matHeaderCellDef width="8%"> NDT Method </th>
+                                            <td mat-cell *matCellDef="let element">{{element.ndtMethod}}</td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="lastInspecYear">
+                                            <th mat-header-cell *matHeaderCellDef width="10%"> Last Insp Year </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.inspectionYear}}</td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="confidence">
+                                            <th mat-header-cell *matHeaderCellDef width="14%"> Confidence
+                                                <span class="mandatory">*</span>
+                                            </th>
+                                            <td mat-cell *matCellDef="let element;">
+                                                <mat-card [formGroup]="inspectionConfidenceList['controls'].confidence['controls'][element.formId]" style="width:80px !important;" class="pipe-card-field">
+                                                    <mat-form-field style="width:80px !important;" floatLabel="never">
+                                                        <mat-select formControlName="confidenceLevel">
+                                                            <mat-option value="Very High">Very High</mat-option>
+                                                            <mat-option value="High">High</mat-option>
+                                                            <mat-option value="Medium">Medium</mat-option>
+                                                            <mat-option value="Low">Low</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="CMLNo">
+                                            <th mat-header-cell *matHeaderCellDef width="14%"> CML No
+                                            </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <mat-card [formGroup]="inspectionConfidenceList['controls'].confidence['controls'][element.formId]" style="width:80px !important;" class="pipe-card-field">
+                                                    <mat-form-field style="width:80px !important;">
+                                                        <input matInput formControlName="cmlNo">
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </td>
+                                        </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="inspectionColumns; sticky: true"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: inspectionColumns;"></tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span class="title-detail">RECOMMENDATIONS</span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                
+                        <div fxFlex="100" fxLayout="column">
+                            <mat-divider></mat-divider>                            
+                                <div fxLayout="column" *ngIf="pipeReportData !== null" [formGroup]="pipeReport">
+                                    <div fxLayout="row" fxLayoutAlign="start center"
+                                        style="padding:10px !important; padding-bottom:0px !important; font-size:12px !important;">
+                
+                                        <div fxFlex="33" fxLayout="row">
+                
+                                            <div fxFlex="40" fxLayoutAlign="start center">
+                                                <mat-label fxFlex="90">Resulted Into
+                
+                                                </mat-label>
+                
+                                            </div>
+                                            <div fxFlex="60" fxLayoutAlign="start center">
+                                                <mat-card fxFlex="90" class="pipe-card-field ">
+                                                    <mat-form-field fxFlex="100">
+                                                        <mat-select formControlName="resultedInto">
+                                                            <mat-option value="UI">Unforeseen Interruption</mat-option>
+                                                            <mat-option value="FL">Flammable Leak</mat-option>
+                                                            <mat-option value="TL">Toxic Leak</mat-option>
+                                                            <mat-option value="UL">Utility Leak</mat-option>
+                                                            <mat-option value="IL">Internal Leak</mat-option>
+                                                            <mat-option value="MI">Major Safety Incident</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </div>
+                
+                
+                                        </div>
+                                        <div fxFlex="33" fxLayout="row">
+                
+                                            <div fxFlex="40" fxLayoutAlign="start center">
+                                                <mat-label fxFlex="90">Root Cause
+                
+                                                </mat-label>
+                                            </div>
+                                            <div fxFlex="60" fxLayoutAlign="start center">
+                                                <mat-card fxFlex="90" class="pipe-card-field ">
+                                                    <mat-form-field fxFlex="100">
+                                                        <mat-select formControlName="rootCause">
+                                                            <mat-option value="AF">Age factor</mat-option>
+                                                            <mat-option value="OI">Operational issue</mat-option>
+                                                            <mat-option value="DI">Design issue</mat-option>
+                                                            <mat-option value="UI">Unidentified Integrity issue</mat-option>
+                                                            <mat-option value="MI">Maintenance issue</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </div>
+                
+                
+                
+                                        </div>
+                                        <div fxFlex="33" fxLayout="row">
+                
+                                            <div fxFlex="40" fxLayoutAlign="start center">
+                                                <mat-label fxFlex="90">Next Followup
+                                                    <span class="mandatory">*</span>
+                                                </mat-label>
+                                            </div>
+                                            <div fxFlex="60" fxLayoutAlign="start center">
+                                                <mat-card fxFlex="90" class="pipe-card-field ">
+                                                    <mat-form-field fxFlex="100">
+                                                        <input matInput [matDatepicker]="picker1" formControlName="nextFollowUpDate">
+                                                        <mat-datepicker-toggle matSuffix [for]="picker1">
+                                                        </mat-datepicker-toggle>
+                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </div>
+                
+                
+                                        </div>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutAlign="start center"
+                                        style="padding:10px !important; font-size:12px !important;">
+                
+                                        <div fxFlex="33" fxLayout="row">
+                
+                                            <div fxFlex="40" fxLayoutAlign="start center">
+                                                <mat-label fxFlex="90">Defect Code</mat-label>
+                                            </div>
+                                            <div fxFlex="60" fxLayoutAlign="start center">
+                                                <mat-card fxFlex="90" class="pipe-card-field">
+                                                    <mat-form-field fxFlex="100">
+                                                        <mat-select formControlName="defectCode">
+                                                            <mat-option value="IC"> Internal corrosion </mat-option>
+                                                            <mat-option value="EC"> External corrosion</mat-option>
+                                                            <mat-option value="CUI">CUI</mat-option>
+                                                            <mat-option value="EXSCC">Ext SCC</mat-option>
+                                                            <mat-option value="SCC">SCC</mat-option>
+                                                            <mat-option value="Paint">Paint</mat-option>
+                                                            <mat-option value="Insulation">Insulation</mat-option>
+                                                            <mat-option value="Support">Support</mat-option>
+                                                            <mat-option value="Fatigue">Fatigue</mat-option>
+                                                            <mat-option value="Erosion">Erosion</mat-option>
+                                                            <mat-option value="Flange">Flange</mat-option>
+                                                            <mat-option value="Valve">Valve</mat-option>
+                                                            <mat-option value="Others">Others</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </div>
+                
+                
+                                        </div>
+                                        <div fxFlex="33" fxLayout="row">
+                
+                                            <div fxFlex="40" fxLayoutAlign="start center">
+                                                <mat-label fxFlex="90">Requires RCA
+                                                    <span class="mandatory">*</span>
+                                                </mat-label>
+                
+                                            </div>
+                                            <div fxFlex="60" fxLayoutAlign="start center">
+                                                <mat-card fxFlex="90" class="pipe-card-field">
+                                                    <mat-form-field fxFlex="100">
+                                                        <mat-select formControlName="requireRCA">
+                                                            <mat-option value="NA">N/A</mat-option>
+                                                            <mat-option value="L1">Level-1</mat-option>
+                                                            <mat-option value="L2">Level-2</mat-option>
+                                                            <mat-option value="L3">Level-3</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </mat-card>
+                                            </div>
+                
+                
+                                        </div>
+                                        <div fxFlex="33" fxLayout="row">            
+                
+                                        </div>
+                                    </div>
+                                </div>
+                            <mat-divider></mat-divider>
+                            <div fxLayout="row" fxFlex="100" fxLayoutGap="10px">
+                
+                                <mat-divider></mat-divider>
+                
+                                    <div *ngIf="pipeReportData !== null" [formGroup]="inspectionRecommendationList" fxFlex="100" fxLayout="column" class="tml-container">
+                                        <table mat-table [dataSource]="recommendationDataSource" class="recom-table">
+                                            <ng-container matColumnDef="slNo">
+                                                <th mat-header-cell *matHeaderCellDef width="12%"> Sl No. </th>
+                                                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:60px !important;text-align:left;" class="pipe-card-field">
+                                                        <mat-form-field style="width:60px !important;">
+                                                            <input matInput formControlName="id">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+                
+                                            <ng-container matColumnDef="recommendedAction">
+                                                <th mat-header-cell *matHeaderCellDef width="32%"> Recommendation </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.recommendedAction}}
+                                                </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:200px !important;text-align:left;" class="pipe-card-field">
+                                                        <mat-form-field style="width:200px !important;">
+                                                            <input matInput formControlName="recommendedAction">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                
+                                            </ng-container>
+                
+                                            <ng-container matColumnDef="actionCategory">
+                                                <th mat-header-cell *matHeaderCellDef width="15%"> Action Category </th>
+                                                <td mat-cell *matCellDef="let element">
+                                                    {{element.actionCategory}}</td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:80px !important;" class="pipe-card-field">
+                                                        <mat-form-field style="width:80px !important;" floatLabel="never">
+                                                            <mat-select formControlName="actionCategory">
+                                                                <mat-option value="Major">Major</mat-option>
+                                                                <mat-option value="Routine">Routine</mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                
+                                            </ng-container>
+                
+                                            <ng-container matColumnDef="responsible">
+                                                <th mat-header-cell *matHeaderCellDef width="12%"> Responsible </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.responsible}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="pipe-card-field">
+                                                        <mat-form-field style="width:70px !important;">
+                                                            <input matInput formControlName="responsible">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="targetDate">
+                                                <th mat-header-cell *matHeaderCellDef width="12%"> Target Date </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.targetDate | date: 'MM/dd/yyyy'}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:80px !important;" class="pipe-card-field">
+                                                        <mat-form-field style="width:80px !important;">
+                                                            <!-- <input matInput formControlName="targetDate"> -->
+                                                            <input matInput [matDatepicker]="picker3" formControlName="targetDate">
+                                                            <mat-datepicker-toggle matSuffix [for]="picker3">
+                                                            </mat-datepicker-toggle>
+                                                            <mat-datepicker #picker3></mat-datepicker>
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="woNumber">
+                                                <th mat-header-cell *matHeaderCellDef width="12%"> WO Number </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.woNumber}} </td>
+                                                <td mat-footer-cell *matFooterCellDef>
+                                                    <mat-card style="width:70px !important;" class="pipe-card-field">
+                                                        <mat-form-field style="width:70px !important;">
+                                                            <input matInput formControlName="woNumber">
+                                                        </mat-form-field>
+                                                    </mat-card>
+                                                </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="add">
+                                                <th mat-header-cell *matHeaderCellDef style="text-align:right;" width="5%">
+                
+                                                </th>
+                                                <td mat-cell *matCellDef="let element; let i=index;" style="text-align:right;">
+                
+                
+                                                    <button mat-mini-fab type="button" color="warn" class="button30" (click)="onDeleteRecommendation(i)">
+                                                        <mat-icon class="icon30">delete</mat-icon>
+                                                    </button>
+                                                </td>
+                                                <td mat-footer-cell *matFooterCellDef style="text-align:right;">
+                                                    <button mat-mini-fab type="button" color="primary" class="button30"
+                                                        (click)="onAddRecommendation()">
+                                                        <mat-icon class="icon30">add</mat-icon>
+                                                    </button>
+                                                </td>
+                                            </ng-container>
+                
+                
+                                            <tr mat-header-row *matHeaderRowDef="recommendationColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: recommendationColumns;"></tr>
+                                            <tr mat-footer-row *matFooterRowDef="recommendationColumns"></tr>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <span class="title-detail">APPROVAL & DISTRIBUTION</span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                            <div fxFlex="50" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="start start"
+                                class="approval-field">
+                                <div fxLayout="row" fxLayoutGap="5px">
+                                    <mat-label class="title-detail">Entered By</mat-label>
+                                    <mat-form-field>
+                                        <input matInput>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="5px">
+                                    <mat-label class="title-detail">Checked By</mat-label>
+                                    <mat-form-field>
+                                        <input matInput>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="5px">
+                                    <mat-label class="title-detail">Approved By</mat-label>
+                                    <mat-form-field>
+                                        <input matInput>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div fxFlex="50" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="start start">
+                                <div class="title-detail">Distribution</div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <div fxLayout="row" fxLayoutAlign="center center" class="inspection-confidence">
+                    <button mat-raised-button class="primary" type="button" (click)="onSubmit()">
+                       Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <span fxFlex="1"></span> -->
+    </div>
+</div>

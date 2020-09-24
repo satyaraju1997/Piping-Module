@@ -1,0 +1,437 @@
+<mat-card *ngIf="IsView" class="card-data">
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div fxFlex="35" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon (click)="getPreviousItem()" style="cursor: pointer;">keyboard_arrow_left</mat-icon>
+            <span class="breadcrumb-title">{{breadcrumb}}</span>
+            <mat-icon (click)="getNextItem()" style="cursor: pointer;">keyboard_arrow_right</mat-icon>
+        </div>
+        <div fxFlex="30" fxLayout="row" fxLayoutAlign="center center">
+            <span class="title">PIPE MASTER</span>
+        </div>
+        <div fxFlex="35" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="8px">
+            <!-- <button mat-icon-button class="toolbar-button" id="btn_Add" matTooltipPosition="above"> -->
+                <mat-icon aria-label="Create New" (click)="AddMaster()" matTooltip="Add">add</mat-icon>
+            <!-- </button> -->
+            <!-- <button mat-icon-button class="toolbar-button" id="btn_Upload"
+                matTooltipPosition="above"> -->
+                <!-- <mat-icon aria-label="Upload" (click)="UploadPipe()" matTooltip="Upload">cloud_upload</mat-icon> -->
+            <!-- </button> -->
+            <!-- <button mat-icon-button class="toolbar-button" id="btn_Download"
+                matTooltipPosition="above" style="border-right: 0px solid #003D7E;"> -->
+                <!-- <mat-icon aria-label="Download" matTooltip="Download" >cloud_download</mat-icon> -->
+            <!-- </button> -->
+        </div>
+    </div>
+    <mat-tab-group style="background-color: #ffffff; ">
+        <mat-tab label="Basic Data">
+            <ng-template matTabContent>
+                <app-basic-data [unitID]="unitID"></app-basic-data>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Design Data">
+            <ng-template matTabContent>
+                <app-design-data [unitID]="unitID"></app-design-data>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Internal Corrosion">
+            <ng-template matTabContent>
+                <app-internal-corrosion [unitID]="unitID"></app-internal-corrosion>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="External Corrosion">
+            <ng-template matTabContent>
+                <app-external-corrosion [unitID]="unitID"></app-external-corrosion>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Environment Cracking">
+            <ng-template matTabContent>
+                <app-special-dms></app-special-dms>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="COF">
+            <ng-template matTabContent>
+                <app-cof></app-cof>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Trendable DMs">
+            <ng-template matTabContent>
+                <app-special-dms></app-special-dms>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Non-Trendable DMs">
+            <ng-template matTabContent>
+                <app-special-dms></app-special-dms>
+            </ng-template>
+        </mat-tab>
+
+    </mat-tab-group>
+</mat-card>
+
+<mat-card *ngIf="IsAdd" class="card-data">
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div>
+            <span class="title">ADD PIPE MASTER</span>
+        </div>
+        <div>
+            <button mat-icon-button class="toolbar-button" style="border-right: 0px solid #E2E2E2;" id="btn_Back"
+                matTooltip="Back" matTooltipPosition="above" (click)="ViewMaster()">
+                <mat-icon aria-label="Back">reply</mat-icon>
+            </button>
+        </div>
+        <div class="title-unit">
+
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-tab-group style="background-color: #ffffff; ">
+        <mat-tab label="Basic Data">
+            <ng-template matTabContent>
+
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Design Data">
+            <ng-template matTabContent>
+                <br>
+                <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Design Temperature</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Design Pressure</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Operting Temperature</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Operting Pressure</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Pipe Specification</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Joint Efficiency</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Allowable Stress</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Flow Stress</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Stength Ratio</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Structural Min Thk</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                    </div>
+
+                    <div fxFlex="33" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Material Std</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Material Grade</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Material Code</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">PWHT</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Corrosion Allowance</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">MDMT</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Yield Strength</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Last Measured Year</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Last Measured Thick</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">User Cal Min Req Thk</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                    </div>
+
+                    <div fxFlex="34" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Insulated</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Insulation Type</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Nominal Diameter</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Nominal Thick</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Length</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Construction Code</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Tensile Strength</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Pr Min Req Thk-I</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Pr Min Req Thk-E</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="10px">
+                            <mat-label fxFlex="60">Effective Min Thk</mat-label>
+                            <mat-form-field fxFlex="40" appearance="outline">
+                                <input matInput>
+                            </mat-form-field>
+                            <span fxFlex="5"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <button mat-raised-button color="accent"> Back</button>
+                    <button mat-raised-button color="primary">Next</button>
+                </div>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Internal Corrosion">
+            <ng-template matTabContent>
+
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="External Corrosion">
+            <ng-template matTabContent>
+
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Environment Cracking">
+            <ng-template matTabContent>
+
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="COF">
+            <ng-template matTabContent>
+
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Trendable DMs">
+            <ng-template matTabContent>
+                <app-special-dms></app-special-dms>
+            </ng-template>
+        </mat-tab>
+
+        <mat-tab label="Non-Trendable DMs">
+            <ng-template matTabContent>
+                <app-special-dms></app-special-dms>
+            </ng-template>
+        </mat-tab>
+
+    </mat-tab-group>
+</mat-card>
+
+
+<mat-card *ngIf="IsUpload" class="card-data">
+
+    <app-spinner *ngIf="isWaitSpinner"></app-spinner>
+    <div fxLayout="row" fxLayoutGap="10px" class="breadcrumb">
+        <div>
+            <span class="title">PIPE MASTER - IMPORT</span>
+        </div>
+        <div>
+            <button mat-icon-button class="toolbar-button" style="border-right: 0px solid #E2E2E2;" id="btn_Back"
+                matTooltip="Back" matTooltipPosition="above" (click)="ViewMaster()">
+                <mat-icon aria-label="Back">reply</mat-icon>
+            </button>
+        </div>
+        <div class="title-unit">
+
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div fxLayout="row" class="master-data" fxLayoutGap="10px">
+        <div fxFlex="100">
+
+
+            <mat-form-field appearance="none">
+                <button mat-raised-button color="primary" *ngIf="displayFileName.length===0" (click)="onClick($event)"
+                    type="button" style="color:#FFFFFF !important; width:300px;">
+                    <mat-icon stype="padding-top:5px;color:#FFFFFF !important;">attach_file</mat-icon>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Choose Pipe Master File &nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <input #fileUpload type="file" multiple="false" class="input_fileupload--hidden"
+                    (change)="onFileChange($event)" accept=".xls,.xlsx,.csv">
+                <br>
+                <span *ngIf="isValid" style="color:red;font-size: 12px;">Please upload valid Pipe Master (xls/xlsx/csv)
+                </span>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <div>
+                        <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical" style="width:200px;">
+                            <mat-chip *ngFor="let f of displayFileName" (removed)="fileRemove(f.name)" removable="true">
+                                {{f.name}}
+                                <mat-icon matChipRemove style="float:right;">cancel</mat-icon>
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary" *ngIf="displayFileName.length!=0" type="button"
+                            style="color:#FFFFFF !important; width:120px;">
+                            <mat-icon stype="padding-top:5px;color:#FFFFFF !important;">cloud_upload</mat-icon>
+                            &nbsp;&nbsp;&nbsp; Import &nbsp;&nbsp;&nbsp;
+                        </button>
+                    </div>
+                </div>
+            </mat-form-field>
+
+            <table class="import-table">
+                <tbody>
+                    <tr *ngFor="let row of data" class="import-table-row">
+                        <td *ngFor="let val of row" class="import-table-cell">
+                            {{val}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</mat-card>

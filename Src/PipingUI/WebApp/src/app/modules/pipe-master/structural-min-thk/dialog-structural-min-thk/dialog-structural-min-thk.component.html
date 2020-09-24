@@ -1,0 +1,88 @@
+<form [formGroup]="addData" (ngSubmit)="onSubmit()">
+    
+    <div fxLayout="column" fxLayoutGap="10px">
+        <mat-icon color="warn" fxFlex="5" fxLayoutAlign="end start" class="close-icon" (click)="closeDialog()">close</mat-icon>
+        <div fxLayout="row" class="dialog-header">
+            <div fxFlex="95" fxLayoutAlign="start center" class="dialog-header">
+                <div>NEW STRUCTURAL MIN THK</div>
+            </div>
+        </div>
+
+        <mat-dialog-content>
+            <div fxLayout="column" fxLayoutGap="5px" class="edit-data-fields">
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-label fxFlex="40">Component Type</mat-label>
+                    <mat-form-field fxFlex="50" appearance="outline">
+                        <input matInput formControlName="componentType">
+                        <mat-error
+                            *ngIf="addData.controls.componentType?.errors && (addData.controls.componentType?.dirty || addData.controls.componentType?.touched)">
+                            <div class="err-msg" *ngIf="addData.controls.componentType?.errors.required">
+                                Component Type is required.
+                            </div>
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex="10"></span>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-label fxFlex="40">Outside Diameter (IN)</mat-label>
+                    <mat-form-field fxFlex="50" appearance="outline">
+                        <input matInput formControlName="outsideDiameterInches">
+                        <mat-error
+                            *ngIf="addData.controls.outsideDiameterInches?.errors && (addData.controls.outsideDiameterInches?.dirty || addData.controls.outsideDiameterInches?.touched)">
+                            <div class="err-msg" *ngIf="addData.controls.outsideDiameterInches?.errors.required">
+                                Outside Diameter (IN) is required.
+                            </div>
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex="10"></span>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-label fxFlex="40">Outside Diameter (MM)</mat-label>
+                    <mat-form-field fxFlex="50" appearance="outline">
+                        <input matInput formControlName="outsideDiameterMM">
+                        <mat-error
+                            *ngIf="addData.controls.outsideDiameterMM?.errors && (addData.controls.outsideDiameterMM?.dirty || addData.controls.outsideDiameterMM?.touched)">
+                            <div class="err-msg" *ngIf="addData.controls.outsideDiameterMM?.errors.required">
+                                Outside Diameter (MM) is required.
+                            </div>
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex="10"></span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-label fxFlex="40">Structural Min Thk (MM)</mat-label>
+                    <mat-form-field fxFlex="50" appearance="outline">
+                        <input matInput formControlName="structureWallThicknessMM">
+                        <mat-error
+                            *ngIf="addData.controls.componentType?.errors && (addData.controls.componentType?.dirty || addData.controls.componentType?.touched)">
+                            <div class="err-msg" *ngIf="addData.controls.componentType?.errors.required">
+                                Structural Min Thk (MM) is required.
+                            </div>
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex="10"></span>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <mat-checkbox color="primary" formControlName="active">Active</mat-checkbox>
+                </div>
+
+            </div>
+        </mat-dialog-content>
+
+        <mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <button type="submit" mat-raised-button color="primary" class="save-btn">
+                <mat-icon class="save-icon">save</mat-icon>
+                Save
+            </button>
+            <button type="button" mat-raised-button color="warn" class="cancel-btn" (click)="onCancel()">
+                <mat-icon>clear</mat-icon>
+                Cancel
+            </button>
+        </mat-dialog-actions>
+
+    </div>
+</form>

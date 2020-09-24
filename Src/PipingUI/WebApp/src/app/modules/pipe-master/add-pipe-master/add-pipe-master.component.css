@@ -1,0 +1,76 @@
+.tabs {
+    background-color: #ffffff;
+}
+
+.pipe-report-header {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 16px;
+    color: #003D7E;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.mat-tab-body.mat-tab-body-active  {
+    background: #E5E5E5;
+}
+
+.add-data {
+    margin: 10px;
+}
+
+.add-data-fields {
+    font-size: 13px ;
+    font-family: sans-serif !important;
+}
+
+.add-data-fields .mat-form-field-flex {
+    height: 40px !important;
+    color:#003D7E;
+}
+
+.add-data-fields .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.add-data-fields .mat-form-field-infix {
+    padding: 0 !important;
+}
+
+.btns button {
+    background-color: #003D7E;
+    font-family: sans-serif;
+}
+
+.section-header{
+    padding: 6px;
+    background-color: #DAEBFF !important;     
+    font-size:13px !important;    
+    color: #003D7E !important;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 0 !important;
+    height: calc(100vh - 130px);
+}
+
+.add-data-card, .save-btn {
+    padding: 0 16px;
+}
+
+.btns {
+    padding: 0px 45px 16px;
+}
+
+.add-header table th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding: 10px !important;
+    border-right: 1px solid rgba(0,0,0,.12);
+}
+
+.add-header table th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 10px !important;
+    border-right: 1px solid rgba(0,0,0,.12);
+}

@@ -1,0 +1,413 @@
+<div fxLayout="column" fxLayoutGap="5px">
+    <mat-icon fxFlex="5" fxLayoutAlign="end start" class="close-icon" (click)="closeDialog()">close
+    </mat-icon>
+
+    <mat-card class="dialog-header matrix-card" fxLayout="row" fxLayoutAlign="start center">
+        <div>Edit External Corrosion</div>
+    </mat-card>
+
+    <mat-dialog-content [formGroup]="editECData">
+        <div fxLayout="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+
+                <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Soil Interface/Condensation</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card class="checkbox-field">
+
+                                <mat-checkbox color="primary" formControlName="soilInterfaceCondensation"></mat-checkbox>
+
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxFlex="40" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Pipe direct on beam/ complex design</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card class="checkbox-field">
+
+                                <mat-checkbox color="primary" formControlName="pipeDirectBeamComplexDesign"></mat-checkbox>
+
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Use LCR</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card class="checkbox-field">
+
+                                <mat-checkbox color="primary" formControlName="useMeasuredLCR"></mat-checkbox>
+
+                            </mat-card>
+                        </div>
+
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Use SCR</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px" style="height:30px;">
+                            <mat-card class="checkbox-field">
+
+                                <mat-checkbox color="primary" formControlName="useMeasuredSCR"></mat-checkbox>
+
+                            </mat-card>
+
+                        </div>
+                    </div>
+
+
+                  
+                </mat-card>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+                <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Theoretical CR</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="theoriticalCR">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Coating Quality</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="coatingQuality">
+                                        <mat-option value="H">High</mat-option>
+                                        <mat-option value="M">Medium</mat-option>
+                                        <mat-option value="L">Low</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Very High</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="veryHigh">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Long Term CR</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="measuredLCR">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Repainted Year</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="repaintedYear">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">High</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="high">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Short Term CR</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="measuredSCR">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Suceptability</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                        <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="suceptability">
+                                                <mat-option value="N">None</mat-option>
+                                                <mat-option value="H">High</mat-option>
+                                                <mat-option value="M">Medium</mat-option> 
+                                                <mat-option value="L">Low</mat-option> 
+                                        </mat-select>                                             
+                                   
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Medium</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="medium">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">External Process</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                        <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="externalProcess">
+                                                <mat-option value="Atmos">Atmosphere</mat-option>
+                                                <mat-option value="Process">Process</mat-option>                                             
+                                            </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Adj Suceptability</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                
+                                    <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="adjustedSuceptability">
+                                            <mat-option value="N">None</mat-option>
+                                            <mat-option value="H">High</mat-option>
+                                            <mat-option value="M">Medium</mat-option> 
+                                            <mat-option value="L">Low</mat-option> 
+                                    </mat-select> 
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Low</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="low">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Driver</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="driver">
+                                        <mat-option value="M">Marine</mat-option>
+                                        <mat-option value="T">Temperate</mat-option>
+                                        <mat-option value="D">Dry</mat-option>
+                                        <mat-option value="S">Severe</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <span fxFlex="100"></span>
+                            <br>
+                            <br>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <span fxFlex="100"></span>
+                            <br>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Found</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="found">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+
+                    </div>
+                </mat-card>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="5px" class="edit-dialog-data-fields">
+                <mat-card fxFlex="100" class="section-card" fxLayout="row" fxLayoutAlign="start center">
+
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Corrosion Type</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <mat-select class="dropdown-icon" tabindex="-1" readonly formControlName="corrosionType">
+                                        <mat-option value="EC">External</mat-option>
+                                        <mat-option value="CUI">CUI</mat-option>
+                                        <mat-option value="Process">Process</mat-option>
+                                    </mat-select>
+
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-label fxFlex="100">Strength Ratio</mat-label>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                    <mat-form-field fxFlex="90">
+                                        <input type="number" tabindex="-1" readonly matInput formControlName="strengthRatio">
+                                    </mat-form-field>
+                                </mat-card>
+                            </div>
+                     
+
+
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Line Ex Age</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="lineAge">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-label fxFlex="100">Effective CR</mat-label>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                    <mat-form-field fxFlex="90">
+                                        <input type="number" tabindex="-1" readonly matInput formControlName="effectiveCR">
+                                    </mat-form-field>
+                                </mat-card>
+                            </div>
+                      
+
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Coat Age</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="coatingAge">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-label fxFlex="100">Effective Age</mat-label>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                    <mat-form-field fxFlex="90">
+                                        <input type="number" tabindex="-1" readonly matInput formControlName="effectiveAge">
+                                    </mat-form-field>
+                                </mat-card>
+                            </div>
+                     
+
+                    </div>
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-label fxFlex="100">Coat Adjustment</mat-label>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                            <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                <mat-form-field fxFlex="90">
+                                    <input type="number" tabindex="-1" readonly matInput formControlName="coatAdjustment">
+                                </mat-form-field>
+                            </mat-card>
+                        </div>
+                        <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-label fxFlex="100">Damage Factor</mat-label>
+                            </div>
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                    <mat-form-field fxFlex="90">
+                                        <input type="number" tabindex="-1" readonly matInput formControlName="damageFactor">
+                                    </mat-form-field>
+                                </mat-card>
+                            </div>
+                      
+
+                    </div>
+
+                    <div fxFlex="20" fxLayout="column" fxLayoutGap="5px">
+
+                            <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                    <mat-label fxFlex="100">Art</mat-label>
+                                </div>
+                                <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                    <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                        <mat-form-field fxFlex="90">
+                                            <input type="number" tabindex="-1" readonly matInput formControlName="art">
+                                        </mat-form-field>
+                                    </mat-card>
+                                </div>
+                                <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-label fxFlex="100">POF</mat-label>
+                                    </div>
+                                    <div fxLayoutAlign="start center" fxLayoutGap="5px">
+                                        <mat-card fxFlex="90" class="pipe-master-readonly-field">
+                                            <mat-form-field fxFlex="90">
+                                                <input type="number" tabindex="-1" readonly matInput formControlName="pof">
+                                            </mat-form-field>
+                                        </mat-card>
+                                    </div>
+                          
+                    </div>
+
+                </mat-card>
+
+            </div>
+        </div>
+      <mat-divider></mat-divider>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <button mat-raised-button class="primary" (click)="onSaveData()">
+           Save</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">
+           Cancel</button>
+    </mat-dialog-actions>
+
+</div>
+
